@@ -248,7 +248,7 @@ Outputs:
 
   MetaConnection1Type:
     Description: Type of environment this connection is for
-    Value: RStudioV3
+    Value: RStudio
 
   MetaConnection1Name:
     Description: Name for this connection
