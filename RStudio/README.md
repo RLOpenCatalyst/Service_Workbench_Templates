@@ -14,8 +14,10 @@ Below are a few key features of RStudio with Application Load Balancer (ALB)
 *	Using unique self-signed certificate to encrypt between ALB and RStudio EC2 to ensure secure connection, thus enabling encrypt connection per RStudio.
 *	ALB Listener Rules leveraged to ensure secure access only to allowed CIDR blocks in case of compromised / shared RStudio URL.
 
-# Automated deployment
-Now that you have gone through the preceding steps, here’s an AWS CloudFormation template so that you can quickly and easily deploy this infrastructure in your own 
+## Getting Started
+
+### Launch Solution
+Having gone through the preceding steps, here’s an AWS CloudFormation template so that you can quickly and easily deploy this infrastructure in your own 
 AWS Cloud environment.
 
 [![AWS CloudFormation Launch Stack SVG Button](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=rlrstudio&templateURL=https://rlswb.s3.amazonaws.com/ec2-rlrstudio.yaml)
