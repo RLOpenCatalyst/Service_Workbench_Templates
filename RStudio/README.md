@@ -1,5 +1,5 @@
 # RStudio with Application Load Balancer on AWS Service Workbench
-
+#### Note: RStudio with Application Load Balancer will be referred as RStudio v2
   ![image](https://user-images.githubusercontent.com/73109773/119454257-fbd76800-bd55-11eb-8292-cb2533e549a0.png)
 
 RStudio on Service Workbench is a comprehensive solution with an Application Load Balancer (ALB), while launched through SWB
@@ -19,9 +19,3 @@ To prepare and launch RStudio V2, refer to prerequisites [here](https://github.c
 * Refer to the Implementation [guide] to deploy RStudio V2
 * To deploy RStudio V2 (with ALB) the SWB Service Catalog product portfolio needs to be added with RStudio V2 Cloud Formation Template, available [here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/ec2-rlrstudio.yaml)
 * Having added RStudio V2 Cloud Formation Template to SWB Service Catalog product portfolio, login to SWB, navigate to Worksapce Types to import and configure RStuido V2 with Input Parameters.
-### Launch Solution
-Having gone through the preceding steps, here’s an AWS CloudFormation template so that you can quickly and easily deploy this infrastructure in your own 
-AWS Cloud environment.
-
-[![AWS CloudFormation Launch Stack SVG Button](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=rlrstudio&templateURL=https://rlswb.s3.amazonaws.com/ec2-rlrstudio.yaml)
-
