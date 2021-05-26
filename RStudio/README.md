@@ -23,7 +23,7 @@ Below are a few key features of RStudio V2
 * Generate a new SSL Certificate in AWS
 * Update the root domain record pointing to custom domain, update the Route53 DNS records, Nameservers of newly created Hosted Zone. 
 
-For detailed steps on prerequisites [Click here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/Prerequisite/prerequisite.md)
+For detailed steps on prerequisites [Click here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/tree/main/RStudio/prerequisites)
 
 ### Implementation
 * Refer to the Implementation [guide] to deploy RStudio V2
