@@ -15,10 +15,17 @@ Below are a few key features of RStudio with Application Load Balancer (ALB)
 *	ALB Listener Rules leveraged to ensure secure access only to allowed CIDR blocks in case of compromised / shared RStudio URL.
 
 ## Getting Started
+### Prerequisite
 To prepare and launch RStudio V2, refer to prerequisites [here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/Prerequisite/prerequisite.md) and
+### Implementation
 * Refer to the Implementation [guide] to deploy RStudio V2
-* To deploy RStudio V2 (with ALB) the SWB Service Catalog product portfolio needs to be added with RStudio V2 Cloud Formation Template, available [here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/ec2-rlrstudio.yaml)
-* Having added RStudio V2 Cloud Formation Template to SWB Service Catalog product portfolio, login to SWB, navigate to Worksapce Types to import and configure RStuido V2 with Input Parameters.
+* To deploy RStudio V2, the SWB Service Catalog product portfolio needs to be added with RStudio V2 Cloud Formation Template, available [here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/ec2-rlrstudio.yaml)
+### Configuration
+* Post adding RStudio V2 Cloud Formation Template to SWB Service Catalog product portfolio do the following
+* 1. Login to SWB as admin
+* 2. Navigate to Workspace Types to import RStudio V2 
+* 3. Configure RStuido V2 with Input Parameters.
+* 4. Launch Workspace Rstudio V2 to provision an RStudio Server
 ### Launch Solution
 Having gone through the preceding steps, here’s an AWS CloudFormation template so that you can quickly and easily deploy this infrastructure in your own 
 AWS Cloud environment.
