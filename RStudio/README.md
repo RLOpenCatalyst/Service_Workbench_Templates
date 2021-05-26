@@ -19,8 +19,7 @@ Below are a few key features of RStudio with Application Load Balancer (ALB)
 * Before deploying RStudio, create Service Workbench with a custom domain associated with SSL certificate. 
 * Generate a new SSL Certificate in AWS
 * Update the root domain record pointing to custom domain, update the Route53 DNS records, Name Servers of newly created Hosted Zone. 
-
-To prepare and launch RStudio V2, refer to prerequisites [here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/Prerequisite/prerequisite.md) and
+For detailed steps on prerequisites [here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/Prerequisite/prerequisite.md)
 ### Implementation
 * Refer to the Implementation [guide] to deploy RStudio V2
 * To deploy RStudio V2, the SWB Service Catalog product portfolio needs to be added with RStudio V2 Cloud Formation Template, available [here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/ec2-rlrstudio.yaml)
