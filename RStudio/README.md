@@ -9,7 +9,7 @@ RStudio v2 on Service Workbench is a comprehensive solution with an Application 
 the ALB is shared between multiple RStudio instances within same AWS account. Using ALB, secure access to each RStudio instance over unique 
 presigned URL.
 
-  ![image](https://user-images.githubusercontent.com/73109773/119454593-5375d380-bd56-11eb-89fb-cf11328ed468.png)
+  ![image](https://user-images.githubusercontent.com/73109773/119657685-d62b8b00-be49-11eb-9618-95dfd8d7bea6.png)
 
 ## Key Features
 Below are a few key features of RStudio v2 
