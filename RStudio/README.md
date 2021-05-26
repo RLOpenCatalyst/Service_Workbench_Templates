@@ -27,7 +27,7 @@ For detailed steps on prerequisites [Click here](https://github.com/RLOpenCataly
 
 ### Implementation
 * Refer to the Implementation [guide] to deploy RStudio v2.
-* To deploy RStudio v2, Update the RStudio v2 [CFT](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/ec2-rlrstudio.yaml) into the SWB Service Catalog portfolio.
+* To deploy RStudio v2, Update the RStudio v2 [CFT](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/cfn-templates/ec2-rlstudio.yaml) into the SWB Service Catalog portfolio.
 
 ### Configuration
 * Post adding RStudio v2 CFT to SWB Service Catalog product portfolio do the following steps:
