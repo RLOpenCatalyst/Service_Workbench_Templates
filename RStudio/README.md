@@ -20,21 +20,21 @@ Below are a few key features of RStudio V2
 ## Getting Started
 ### Prerequisite
 * Before deploying RStudio V2, create Service Workbench with a custom domain associated with SSL certificate. 
-* Generate a new SSL Certificate in AWS
+* Generate a new SSL Certificate in AWS.
 * Update the root domain record pointing to custom domain, update the Route53 DNS records, Nameservers of newly created Hosted Zone. 
 
-For detailed steps on prerequisites [Click here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/tree/main/RStudio/prerequisites)
+For detailed steps on prerequisites [Click here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/prerequisites/prerequisite.md)
 
 ### Implementation
-* Refer to the Implementation [guide] to deploy RStudio V2
-* To deploy RStudio V2, the SWB Service Catalog product portfolio needs to be added with RStudio V2 Cloud Formation Template, [Click here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/ec2-rlrstudio.yaml)
+* Refer to the Implementation [guide] to deploy RStudio V2.
+* To deploy RStudio V2, Update the RStudio V2 [CFT](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/ec2-rlrstudio.yaml) into the SWB Service Catalog portfolio.
 
 ### Configuration
-* Post adding RStudio V2 Cloud Formation Template to SWB Service Catalog product portfolio do the following steps:
-    1. Login to SWB as admin
-    2. Navigate to Workspace Types to import RStudio V2 
-    3. Configure RStuido V2 with Input Parameters.
-    4. Launch Workspace Rstudio V2 to provision an RStudio Server
+* Post adding RStudio V2 CFT to SWB Service Catalog product portfolio do the following steps:
+    1. Login to SWB as admin.
+    2. Navigate to Workspace Types to import RStudio V2.
+    3. Configure RStudio V2 with input parameters.
+    4. Launch Rstudio V2 Workspace to provision an RStudio Server.
 
 ### Launch Solution
 Having gone through the preceding steps, here’s an AWS CloudFormation template so that you can quickly and easily deploy this infrastructure in your own 
