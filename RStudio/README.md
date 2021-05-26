@@ -5,8 +5,8 @@ Researchers use RStudio very commonly in their day to day efforts. While RStudio
 
   ![image](https://user-images.githubusercontent.com/73109773/119454257-fbd76800-bd55-11eb-8292-cb2533e549a0.png)
 
-RStudio v2 on Service Workbench is a comprehensive solution with an Application Load Balancer (ALB).  While launched through SWB
-Workspaces the ALB is shared between multiple RStudio instances within same AWS account. Using ALB, secure access to each RStudio instance over unique 
+RStudio v2 on Service Workbench is a comprehensive solution with an Application Load Balancer (ALB).  While launched through SWB Workspaces 
+the ALB is shared between multiple RStudio instances within same AWS account. Using ALB, secure access to each RStudio instance over unique 
 presigned URL.
 
   ![image](https://user-images.githubusercontent.com/73109773/119454593-5375d380-bd56-11eb-89fb-cf11328ed468.png)
