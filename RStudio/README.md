@@ -1,6 +1,8 @@
 # RStudio V2* on AWS Service Workbench
 *RStudio with Application Load Balancer
 
+Researchers use RStudio very commonly in their day to day efforts. While RStudio is a popular product, the process of installing RStudio securely on AWS Cloud and using it in a cost effective manner is a non-trivial task specially for Researchers. With AWS SWB the goal is to make this process very simple, secure and cost effective for Researchers so that they can focus on “Science” and not “Servers” thereby increasing their productivity.
+
   ![image](https://user-images.githubusercontent.com/73109773/119454257-fbd76800-bd55-11eb-8292-cb2533e549a0.png)
 
 RStudio V2 on Service Workbench is a comprehensive solution with an Application Load Balancer (ALB).  While launched through SWB
@@ -12,8 +14,8 @@ Presigned URL.
 ## Key Features
 Below are a few key features of RStudio V2 with Application Load Balancer (ALB)
 *	The shared AWS ALB (Application Load Balancer) used with AWS ACM certificates for each Hosting Account simplifies the Certificate Management Lifecycle.
-*	Using unique self-signed certificate to encrypt between ALB and RStudio EC2 to ensure secure connection, thus enabling encrypt connection per RStudio.
-*	ALB Listener Rules leveraged to ensure secure access only to allowed CIDR blocks in case of compromised / shared RStudio URL.
+*	Using unique self-signed certificate to encrypt between ALB and RStudio EC2 to ensure secure connection, thus enabling encrypted connection per RStudio.
+*	ALB Listener rules leveraged to ensure secure access only to allowed CIDR blocks in case of compromised / shared RStudio URL.
 
 ## Getting Started
 ### Prerequisite
