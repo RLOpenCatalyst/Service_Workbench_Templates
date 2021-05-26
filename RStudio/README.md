@@ -1,4 +1,4 @@
-# RStudio with ALB on AWS Service Workbench
+# RStudio with Application Load Balancer on AWS Service Workbench
 
   ![image](https://user-images.githubusercontent.com/73109773/119454257-fbd76800-bd55-11eb-8292-cb2533e549a0.png)
 
