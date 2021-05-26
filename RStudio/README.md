@@ -15,7 +15,7 @@ Below are a few key features of RStudio with Application Load Balancer (ALB)
 
 ## Getting Started
 To prepare and launch RStudio v2, refer to prerequisites [here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/Prerequisite/prerequisite.md) and
-* Refer to the Implementation [guide] to deploy RStudio v2
+* Refer to the Implementation [guide is being worked on, link will be updated] to deploy RStudio v2
 * To deploy RStudio v2 (with ALB) the SWB Service Catalog product portfolio needs to be added with RStudio v2 Cloud Formation Template, available [here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/ec2-rlrstudio.yaml)
 * Having added RStudio v2 Cloud Formation Template to SWB Service Catalog product portfolio, login to SWB, navigate to Worksapce Types to import and configure RStuido v2 with Input Parameters.
 * Navigate to Workspaces, Create Research Workspace, Select RStudio v2, keyin Name, Restricted CIDR, Select Project etc.. click on Create Research Workspace to initiate RStudio v2 launch
