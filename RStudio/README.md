@@ -34,4 +34,4 @@ For detailed steps on prerequisites [Click here](https://github.com/RLOpenCataly
     1. Login to SWB as admin.
     2. Navigate to Workspace Types to import RStudio v2.
     3. Configure RStudio v2 with input parameters.
-    4. Launch Rstudio v2 Workspace to provision an RStudio Server.
+    4. Launch Rstudio v2 Workspace to provision an RStudio Server.  
