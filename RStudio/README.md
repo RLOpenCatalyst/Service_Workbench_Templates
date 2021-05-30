@@ -15,7 +15,29 @@ presigned URL.
 Below are a few key features of RStudio v2 
 *	The shared AWS ALB used with AWS ACM certificates for each Hosting Account simplifies the Certificate Management Lifecycle.
 *	Use unique self-signed certificate to encrypt ALB and RStudio EC2 to ensure secure connection, thus enabling encrypted connection per RStudio.
-
+           
+## RStudio AMI
+* The current Rstudio AMI is embedded with a user provided certificate and key for the custom domain. The new design will eliminate the need for those 
+and bake the AMI with self signed certificates. The self signed certificates are used to encrypt only the traffic between ALB and EC2.
+The AMI is also packed with additional R packages that are commonly used by the researchers.
+    
+    |RStudio Server Version | 
+    |-----------------------| 
+    |      1.3.959          | 
+    
+            
+    | Additional Packages Installed |
+    | ------------------------------|
+    |      tidyverse                |
+    |      devtools                 |
+    |      kableExtra               |
+    |      survival                 |
+    |      survminer                |
+    |      MASS                     |
+    |      quantreg                 |
+    |      DescTools                |
+    
+     
 ## Getting Started
 ### Prerequisite
 * Before deploying RStudio v2, create Service Workbench with a custom domain associated with SSL certificate.
@@ -41,8 +63,22 @@ For detailed steps on prerequisites [Click here](https://github.com/RLOpenCataly
     2. Navigate to Workspace Types to import RStudio v2.
     3. Configure RStudio v2 with input parameters.
     
-        ![image](https://user-images.githubusercontent.com/73109773/119812428-c4a7b900-bf05-11eb-80a7-a42c449a2f10.png)
+       | Name         |   Notes      |
+       | ------------- | ------------- |
+       | AccessFromCIDRBlock  | The CIDR used to access the ec2 instances  |
+       | AmiId  | Amazon Machine Image for the EC2 instance  |
+       | EncryptionKeyArn | The ARN of the KMS encryption Key used to encrypt data in the instance |
+       | EnvironmentInstanceFiles | An S3 URI (starting with "s3://") that specifies the location of files to be copied to the environment instance, including any bootstrap scripts |
+       | IamPolicyDocument | The IAM policy to be associated with the launched workstation |
+       | InstanceType | EC2 instance type to launch |
+       | KeyName  | Keypair name for SSH access |
+       | Namespace | An environment name that will be prefixed to resource names |
+       | S3Mounts | A JSON array of objects with name, bucket, and prefix properties used to mount data |
+       | Subnet | The VPC subnet in which the EC2 instance will reside |
+       | VPC | The VPC in which the EC2 instance will reside |
+       | ACMSSLCertARN | The ARN of the AWS Certificate Manager SSL Certificate to associate with the Load Balancer |
+       
+    4. Launch Rstudio v2 Workspace to provision an RStudio Server. 
 
-        
-        
-    4. Launch Rstudio v2 Workspace to provision an RStudio Server.  
+       
+       
