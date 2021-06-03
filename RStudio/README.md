@@ -33,7 +33,9 @@ For detailed steps on prerequisites [Click here](https://github.com/RLOpenCataly
 
 ### Implementation
 * Refer to the Implementation [guide] to deploy RStudio v2.
-* To deploy RStudio v2, Update the RStudio v2 [CFT](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/cfn-templates/ec2-rlstudio.yaml) into the SWB Service Catalog portfolio.
+* To deploy RStudio v2, will have to add RStudio v2 CFT as a product in SWB Service Catalog, click on the Launch Stack to upload RStudio v2 CFT.
+
+[![AWS CloudFormation Launch Stack SVG Button](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=rlrstudio&templateURL=https://gitrstudiocft.s3.amazonaws.com/v2upldtosc)
 
 ### Configuration
 * Post adding RStudio v2 CFT to SWB Service Catalog product portfolio do the following steps:
