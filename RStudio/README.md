@@ -3,7 +3,8 @@
 
 Researchers use RStudio very commonly in their day to day efforts. While RStudio is a popular product, the process of installing RStudio securely on AWS Cloud and using it in a cost effective manner is a non-trivial task specially for Researchers. With AWS SWB the goal is to make this process very simple, secure and cost effective for Researchers so that they can focus on “Science” and not “Servers” thereby increasing their productivity.
   
-  ![image](https://user-images.githubusercontent.com/73109773/120095400-77188f80-c143-11eb-8a66-17bb043b65d1.png)
+  ![image](https://user-images.githubusercontent.com/73109773/120605679-f7086780-c46b-11eb-9b50-8bfe546e6094.png)
+
  
 RStudio v2 on Service Workbench is a comprehensive solution with an Application Load Balancer (ALB).  While launched through SWB Workspaces 
 the ALB is shared between multiple RStudio instances within same AWS account. Using ALB, secure access to each RStudio instance over unique 
