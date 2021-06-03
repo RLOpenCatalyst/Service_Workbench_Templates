@@ -2,9 +2,9 @@
 *RStudio with Application Load Balancer (ALB)
 
 Researchers use RStudio very commonly in their day to day efforts. While RStudio is a popular product, the process of installing RStudio securely on AWS Cloud and using it in a cost effective manner is a non-trivial task specially for Researchers. With AWS SWB the goal is to make this process very simple, secure and cost effective for Researchers so that they can focus on “Science” and not “Servers” thereby increasing their productivity.
-
-  ![image](https://user-images.githubusercontent.com/73109773/119815866-a93ead00-bf09-11eb-8193-e466c07d86b0.png)
   
+  ![image](https://user-images.githubusercontent.com/73109773/120095400-77188f80-c143-11eb-8a66-17bb043b65d1.png)
+ 
 RStudio v2 on Service Workbench is a comprehensive solution with an Application Load Balancer (ALB).  While launched through SWB Workspaces 
 the ALB is shared between multiple RStudio instances within same AWS account. Using ALB, secure access to each RStudio instance over unique 
 presigned URL.
@@ -15,7 +15,29 @@ presigned URL.
 Below are a few key features of RStudio v2 
 *	The shared AWS ALB used with AWS ACM certificates for each Hosting Account simplifies the Certificate Management Lifecycle.
 *	Use unique self-signed certificate to encrypt ALB and RStudio EC2 to ensure secure connection, thus enabling encrypted connection per RStudio.
-
+           
+## RStudio AMI
+* The current Rstudio AMI is embedded with a user provided certificate and key for the custom domain. The new design will eliminate the need for those 
+and bake the AMI with self signed certificates. The self signed certificates are used to encrypt only the traffic between ALB and EC2.
+The AMI is also packed with additional R packages that are commonly used by the researchers.
+    
+    |RStudio Server Version | 
+    |-----------------------| 
+    |      1.3.959          | 
+    
+            
+    | Additional Packages Installed |
+    | ------------------------------|
+    |      tidyverse                |
+    |      devtools                 |
+    |      kableExtra               |
+    |      survival                 |
+    |      survminer                |
+    |      MASS                     |
+    |      quantreg                 |
+    |      DescTools                |
+    
+     
 ## Getting Started
 ### Prerequisite
 * Before deploying RStudio v2, create Service Workbench with a custom domain associated with SSL certificate.
@@ -33,7 +55,9 @@ For detailed steps on prerequisites [Click here](https://github.com/RLOpenCataly
 
 ### Implementation
 * Refer to the Implementation [guide] to deploy RStudio v2.
-* To deploy RStudio v2, Update the RStudio v2 [CFT](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/cfn-templates/ec2-rlstudio.yaml) into the SWB Service Catalog portfolio.
+* To deploy RStudio v2, will have to add RStudio v2 CFT as a product in SWB Service Catalog, click on the Launch Stack to upload RStudio v2 CFT.
+
+[![AWS CloudFormation Launch Stack SVG Button](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=rlrstudio&templateURL=https://gitrstudiocft.s3.amazonaws.com/v2upldtosc)
 
 ### Configuration
 * Post adding RStudio v2 CFT to SWB Service Catalog product portfolio do the following steps:
@@ -41,8 +65,22 @@ For detailed steps on prerequisites [Click here](https://github.com/RLOpenCataly
     2. Navigate to Workspace Types to import RStudio v2.
     3. Configure RStudio v2 with input parameters.
     
-        ![image](https://user-images.githubusercontent.com/73109773/119812428-c4a7b900-bf05-11eb-80a7-a42c449a2f10.png)
+       | Name         |   Notes      |
+       | ------------- | ------------- |
+       | AccessFromCIDRBlock  | The CIDR used to access the ec2 instances  |
+       | AmiId  | Amazon Machine Image for the EC2 instance  |
+       | EncryptionKeyArn | The ARN of the KMS encryption Key used to encrypt data in the instance |
+       | EnvironmentInstanceFiles | An S3 URI (starting with "s3://") that specifies the location of files to be copied to the environment instance, including any bootstrap scripts |
+       | IamPolicyDocument | The IAM policy to be associated with the launched workstation |
+       | InstanceType | EC2 instance type to launch |
+       | KeyName  | Keypair name for SSH access |
+       | Namespace | An environment name that will be prefixed to resource names |
+       | S3Mounts | A JSON array of objects with name, bucket, and prefix properties used to mount data |
+       | Subnet | The VPC subnet in which the EC2 instance will reside |
+       | VPC | The VPC in which the EC2 instance will reside |
+       | ACMSSLCertARN | The ARN of the AWS Certificate Manager SSL Certificate to associate with the Load Balancer |
+       
+    4. Launch Rstudio v2 Workspace to provision an RStudio Server. 
 
-        
-        
-    4. Launch Rstudio v2 Workspace to provision an RStudio Server.  
+       
+       
