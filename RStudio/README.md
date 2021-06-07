@@ -87,5 +87,5 @@ For detailed steps on prerequisites [Click here](https://github.com/RLOpenCataly
 Customers who chose to download and use RStudiov2 can register themselves by providing the details for notifications on Patches, Updates.
 They can do so by 
 1. Sending an email to rlcloudsupport@relevancelab.com or 
-2. Log into portal https://serviceone@relevancelab.com or
+2. Log into portal https://serviceone.relevancelab.com/support/home or
 3. Submit form on https://relevancelab.com/aws-cloud/
