@@ -83,5 +83,8 @@ For detailed steps on prerequisites [Click here](https://github.com/RLOpenCataly
        
     4. Launch Rstudio v2 Workspace to provision an RStudio Server. 
 
-       
-       
+## New Customer Registration for RStudio with ALB 
+As part of an ongoing collaboration with AWS SWB teams, we expect customers would need help with implementation, support, and ongoing enhancements of the above solution. Kindly register with Relevance Lab to get these benefits. 
+
+
+[image](https://gd1.relevancelab.com/aws-service-workbench/#Contact%20us)
