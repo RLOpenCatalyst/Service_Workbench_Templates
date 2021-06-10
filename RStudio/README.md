@@ -86,5 +86,5 @@ For detailed steps on prerequisites [Click here](https://github.com/RLOpenCataly
 ## New Customer Registration for RStudio with ALB 
 As part of an ongoing collaboration with AWS SWB teams, we expect customers would need help with implementation, support, and ongoing enhancements of the above solution. Kindly register with Relevance Lab to get these benefits. 
 
-For Registration [Click here](https://gd1.relevancelab.com/aws-service-workbench/)
+For Registration [Click here](https://gd1.relevancelab.com/aws-service-workbench/#Contact%20us)
 
