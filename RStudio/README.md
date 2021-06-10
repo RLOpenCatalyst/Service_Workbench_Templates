@@ -85,4 +85,5 @@ For detailed steps on prerequisites [Click here](https://github.com/RLOpenCataly
 
 ## New Customer Registration for RStudio with ALB 
 Customers who chose to download and use RStudiov2 can register themselves by providing the details for notifications on Patches, Updates.
-For Registring, [Click here](https://relevancelab.com)
+For Registring, [Click here](https://gd1.relevancelab.com/aws-service-workbench/)
+
