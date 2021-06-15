@@ -1,3 +1,4 @@
+![Support Process](https://user-images.githubusercontent.com/63344463/122051003-bd3b4780-ce01-11eb-8e97-ee62d3e48144.jpg)
 # Service_Workbench_Templates
 Templates for AWS Service Workbench from Relevance Lab
 # Relevance Lab and AWS Partnership for Service WorkBench on AWS
