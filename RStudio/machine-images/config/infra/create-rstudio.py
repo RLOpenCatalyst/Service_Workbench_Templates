@@ -7,6 +7,7 @@ import json
 import datetime
 import os
 import yaml
+import argparse
 
 templateURL = 'https://gitrstudiocft.s3.amazonaws.com/RstudioToServiceCatalog'
 regionShortNamesMap = {
@@ -168,7 +169,7 @@ def getStackEvents(stackName):
         index = 0
         for event in finalList:
             if 'ResourceStatusReason' in event:
-                miniList = [event['ResourceStatus'],event['LogicalResourceId'],event['ResourceStatusReason']]    ' + event['ResourceStatusReason'])
+                miniList = [event['ResourceStatus'],event['LogicalResourceId'],event['ResourceStatusReason']]
             else:
                 miniList = [event['ResourceStatus'],event['LogicalResourceId'],'-']
             mainList[index] = miniList
@@ -189,11 +190,12 @@ def describeStack(stackName):
     responseJson = json.loads(response)
     stackStatus = responseJson['Stacks'][0]['StackStatus']
     if(stackStatus == 'CREATE_COMPLETE'):
-        print('Stack created successfully')
+        print('-------------------------Stack created successfully----------------------------------')
         return
     if(stackStatus == 'CREATE_FAILED' or 'IMPORT_FAILED' or 'IMPORT_ROLLBACK_IN_PROGRESS' or 'IMPORT_ROLLBACK_FAILED' or 'IMPORT_ROLLBACK_COMPLETE' or 'ROLLBACK_IN_PROGRESS'):
         print('Stack ' + stackName + ' is with status ' + stackStatus + ', so deleting the stack')
-        print('Deleting the stack. Please check the input parameters and try again')
+        print('Please check the input parameters and try again')
+        print('-------------------------Deleting the stack----------------------------------')
         deleteStack(stackName)
 
 def deleteStack(stackName):
@@ -214,6 +216,13 @@ def IsRoleNameExist(roleName):
 
 if __name__ == "__main__":
     try:
+        parser=argparse.ArgumentParser(
+            description=''' Run this command to create the Service Catalog product for the RStudio Server with ALB support.
+                The command expects a single yaml file in the same folder as the script as input. 
+                Copy the $stage.yml file from your SWB installation and add a line with key as portfolio-id and the value as the portfolio-id created during the deployment of SWB. The script will error out if it does not find this file.
+                The script also looks for the role that was created during SWB installation. It needs the solutionName in the yaml file to build the role-name.
+                The script also needs the AWS region into which the SWB installation was made. It looks for the awsRegion key in the yaml file.''')
+        args=parser.parse_args()
         roleName,stackName = formRoleName()
         stackResponse = createStack(roleName,stackName)
         getStackEvents(stackName)
