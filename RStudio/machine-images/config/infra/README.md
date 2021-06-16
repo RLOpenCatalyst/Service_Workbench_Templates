@@ -10,7 +10,7 @@ To install Packer 1.6.0, use [pkenv](https://github.com/iamhsa/pkenv)
  * Clone the repository Service_Workbench_Templates by using the following git command
 git clone https://github.com/RLOpenCatalyst/Service_Workbench_Templates.git
 
-Steps to install EC2-RStudio-Server AMI
+**Steps to install EC2-RStudio-Server AMI**
 
  * Change the configuration file for AMI creation.
 Navigate to the the folder RStudio/machine-images/config/infra. <br />
@@ -27,7 +27,7 @@ Fill the following parameters in the file configuration.json by using the parame
  * Run the packer script in the folder RStudio/machine-images/config/infra using the following command
     - packer build -var-file=configuration.json packer-ec2-rstudio-workspace.json
 
-Steps to install EC2-RStudio-Server
+**Steps to install EC2-RStudio-Server**
 
  * Follow the steps for deploying Rstudio product into Service Workbench’s portfolio
     * Copy only the $stage file from the folder main/config/settings/ of
@@ -35,11 +35,11 @@ Steps to install EC2-RStudio-Server
     Service_Workbench_Templates/RStudio/machine-images/config/infra.
     * Please make sure you have the following keys and their values in the
     $stage file.
-    -   solutionName
-    -   awsRegion
-    * **NOTE** : Add one more key called ‘portfolioId ’to the same file. You can login to your Main account and access the Service Catalog in the region where your Service Workbench instance is deployed. Navigate to Portfolios in the left hand menu. Find the Service Workbench created portfolio and note down the portfolio id.
+        -   solutionName
+        -   awsRegion
+    * **NOTE**: Add one more key called ‘portfolioId ’to the same file. You can login to your Main account and access the Service Catalog in the region where your Service Workbench instance is deployed. Navigate to Portfolios in the left hand menu. Find the Service Workbench created portfolio and note down the portfolio id.
     * After adding the Portfolio ID to the $stage file you can run the
     following commands 	
-    -  pip install -r requirements.txt  	 
-    -  python create-rstudio.py
+        -  pip install -r requirements.txt  	 
+        -  python create-rstudio.py
     * If the script outputs saying ‘Stack created successfully’, the EC2-RStudio-Server product should be visible in the Workspace Types screen when you login to Service Workbench as an Administrator. Otherwise you can refer to the errors that are thrown by the script and correct them accordingly.
