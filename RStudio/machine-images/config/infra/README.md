@@ -5,8 +5,9 @@ To run the following steps you need any Linux machine, preferably the same machi
  * **Install packer** : This solution uses Packer to create an Amazon Machine Image (AMI). This AMI forms the basis for RStudio environment that investigators use for their research.
 To install Packer 1.6.0, use [pkenv](https://github.com/iamhsa/pkenv) 
 [Packer Installation Link](https://learn.hashicorp.com/tutorials/packer/get-started-install-cli)
- * **Install AWS CLI**: [AWS  CLI Installation Link](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
+ * **Install AWS CLI 2**: [AWS  CLI Installation Link](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
  *  **Install Git**: [Git Installation Link](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+ *  **Install pip**: [pip Installation Link](https://pip.pypa.io/en/stable/installing/)
  * Clone the repository Service_Workbench_Templates by using the following git command. <br />
     - git clone https://github.com/RLOpenCatalyst/Service_Workbench_Templates.git
 

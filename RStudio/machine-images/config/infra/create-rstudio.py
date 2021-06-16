@@ -82,6 +82,33 @@ def formRoleName():
             stackName = commonName + '-rlrstudio'
     return roleName, stackName
 
+def getPortfolioIdUsingRoleName(roleName):
+    portfolioFound = False
+    portfolioId = ''
+    if roleName.endswith('-LaunchConstraint'):
+        portfolioName = roleName[:-(len('-LaunchConstraint'))]
+        print('Checking for portfolio name ' + portfolioName + ' in the AWS account')
+        client = boto3.client('servicecatalog')
+        response = client.list_portfolios(
+            AcceptLanguage='en',
+            PageSize=10
+        )
+        response = json.dumps(response, default=myconverter)
+        responseJson = json.loads(response)
+        portfolioList = responseJson['PortfolioDetails']
+        for portfolio in portfolioList:
+            if portfolio['DisplayName'] == portfolioName:
+                portfolioFound = True
+                portfolioId = portfolio['Id']
+                break
+        if portfolioFound:
+            print('Found portfolio name '+ portfolioName + ' in the AWS account')
+        else:
+            raise Exception('Portfolio with the name ' + portfolioName + ' is not found in the account. Please check the parameters in the stage file')
+    return portfolioId
+
+
+
 def checkIfRegionisValid(region):
     print('Checking for the validity of region '+ region + ' which is in the stage file')
     client = boto3.client('ec2')
@@ -103,22 +130,22 @@ def checkIfPortfolioExistInAccount():
     print('Found the Portfolio ID ' + configuration['portfolioId'] + ' in the account ')
     return response
 
-def createStack(roleName, stackName):
+def createStack(roleName, stackName, portfolioId):
     client = boto3.client('cloudformation')
     roleExist = IsRoleNameExist(roleName)
     if roleExist:
-        if('portfolioId' not in configuration.keys()):
-            raise Exception("Please add Portfolio ID into stage file")
-        if(stackName is None or configuration['portfolioId'] is None ):
-            raise Exception("Portfolio ID value is not available. Please enter Portfolio ID value into stage file")
-        checkIfPortfolioExistInAccount()
+        # if('portfolioId' not in configuration.keys()):
+        #     raise Exception("Please add Portfolio ID into stage file")
+        # if(stackName is None or configuration['portfolioId'] is None ):
+        #     raise Exception("Portfolio ID value is not available. Please enter Portfolio ID value into stage file")
+        # checkIfPortfolioExistInAccount()
         response = client.create_stack(
             StackName=stackName,
             TemplateURL=templateURL,
             Parameters=[
                 {
                     'ParameterKey': 'PortfolioID',
-                    'ParameterValue': configuration['portfolioId']
+                    'ParameterValue': portfolioId
                 },
                 {
                     'ParameterKey': 'RoleName',
@@ -224,7 +251,8 @@ if __name__ == "__main__":
                 The script also needs the AWS region into which the SWB installation was made. It looks for the awsRegion key in the yaml file.''')
         args=parser.parse_args()
         roleName,stackName = formRoleName()
-        stackResponse = createStack(roleName,stackName)
+        portfolioId = getPortfolioIdUsingRoleName(roleName)
+        stackResponse = createStack(roleName,stackName,portfolioId)
         getStackEvents(stackName)
         describeStack(stackName)
     except Exception as e:
