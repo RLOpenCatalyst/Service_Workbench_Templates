@@ -55,7 +55,7 @@ The AMI is also packed with additional R packages that are commonly used by the 
 For detailed steps on prerequisites [Click here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/prerequisites/prerequisite.md)
 
 ### Implementation
-* Refer to the Implementation [guide] to deploy EC2-RStudio-Server.
+* Refer to the Implementation [guide](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/tree/main/RStudio/machine-images/config/infra/README.md) to deploy EC2-RStudio-Server.
 * To deploy EC2-RStudio-Server, you will have to add EC2-RStudio-Server CFT as a product in SWB Service Catalog
 
 ### Configuration
