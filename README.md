@@ -2,7 +2,7 @@
 
 
 # Service_Workbench_Templates
-Templates for AWS Service Workbench from Relevance Lab
+
 # Relevance Lab and AWS Partnership for Service WorkBench on AWS
 Both AWS SWB and Relevance Lab RLCatalyst Research Gateway teams are committed to making scientific research frictionless for researchers. With a shared goal, this new initiative speeds up collaboration and will help provide new innovative open-source solutions leveraging AWS Service Workbench and partner-provided solutions like this RStudio with ALB from Relevance Lab. The collaboration efforts will soon be adding more solutions covering Genomic Pipeline Orchestration with Nextflow, use of HPC Parallel cluster, and secure research workspaces with AppStream 2.0, so stay tuned.
 
@@ -14,6 +14,10 @@ Relevance Lab (RL), in partnership with AWS, set out to make the experience of u
 
 # Registration for a new Customer and Support Process details
 
+As shown below, Customers who wish to use Relevance Lab Custom Solution and wish to get support for issues, upgrades will need to signup as shown below.
+
 ![Signup Process](https://user-images.githubusercontent.com/63344463/122382998-10d79d80-cf88-11eb-9cea-562a958e0346.jpg)
+
+Once signed up, Customers can raise an issue as shown below.
 
 ![Support Process](https://user-images.githubusercontent.com/63344463/122383529-893e5e80-cf88-11eb-965b-da984dcba1a4.jpg)
