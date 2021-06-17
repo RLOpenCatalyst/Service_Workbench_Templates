@@ -1,6 +1,8 @@
 
+
+
 # Service_Workbench_Templates
-Templates for AWS Service Workbench from Relevance Lab
+
 # Relevance Lab and AWS Partnership for Service WorkBench on AWS
 Both AWS SWB and Relevance Lab RLCatalyst Research Gateway teams are committed to making scientific research frictionless for researchers. With a shared goal, this new initiative speeds up collaboration and will help provide new innovative open-source solutions leveraging AWS Service Workbench and partner-provided solutions like this RStudio with ALB from Relevance Lab. The collaboration efforts will soon be adding more solutions covering Genomic Pipeline Orchestration with Nextflow, use of HPC Parallel cluster, and secure research workspaces with AppStream 2.0, so stay tuned.
 
@@ -11,4 +13,14 @@ RStudio is a popular software used by the Scientific Research Community and supp
 Relevance Lab (RL), in partnership with AWS, set out to make the experience of using RStudio with AWS Service Workbench simple and secure.
 
 # Registration for a new Customer and Support Process details
-![Support Process](https://user-images.githubusercontent.com/63344463/122051003-bd3b4780-ce01-11eb-8e97-ee62d3e48144.jpg)
+
+As shown below, Customers who wish to use Relevance Lab Custom Solution and wish to get support for issues, upgrades will need to signup as shown below. You can do so by clicking on the sign up button below.
+
+![Signup Process](https://user-images.githubusercontent.com/63344463/122382998-10d79d80-cf88-11eb-9cea-562a958e0346.jpg)
+
+Once signed up, Customers can raise an issue as shown below.
+
+![Support Process](https://user-images.githubusercontent.com/63344463/122383529-893e5e80-cf88-11eb-965b-da984dcba1a4.jpg)
+
+
+[![Signup](https://user-images.githubusercontent.com/64137641/122388046-1f748380-cf8d-11eb-8b01-114eca8d16f7.jpg)](https://gd1.relevancelab.com/registration-form/)
