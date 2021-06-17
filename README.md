@@ -1,5 +1,6 @@
 
 
+
 # Service_Workbench_Templates
 Templates for AWS Service Workbench from Relevance Lab
 # Relevance Lab and AWS Partnership for Service WorkBench on AWS
@@ -15,4 +16,4 @@ Relevance Lab (RL), in partnership with AWS, set out to make the experience of u
 
 ![Signup Process](https://user-images.githubusercontent.com/63344463/122382998-10d79d80-cf88-11eb-9cea-562a958e0346.jpg)
 
-![Support Process](https://user-images.githubusercontent.com/63344463/122051003-bd3b4780-ce01-11eb-8e97-ee62d3e48144.jpg)
+![Support Process](https://user-images.githubusercontent.com/63344463/122383529-893e5e80-cf88-11eb-965b-da984dcba1a4.jpg)
