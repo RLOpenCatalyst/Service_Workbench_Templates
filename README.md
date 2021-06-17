@@ -1,4 +1,5 @@
 
+
 # Service_Workbench_Templates
 Templates for AWS Service Workbench from Relevance Lab
 # Relevance Lab and AWS Partnership for Service WorkBench on AWS
@@ -11,4 +12,7 @@ RStudio is a popular software used by the Scientific Research Community and supp
 Relevance Lab (RL), in partnership with AWS, set out to make the experience of using RStudio with AWS Service Workbench simple and secure.
 
 # Registration for a new Customer and Support Process details
+
+![Signup Process](https://user-images.githubusercontent.com/63344463/122382998-10d79d80-cf88-11eb-9cea-562a958e0346.jpg)
+
 ![Support Process](https://user-images.githubusercontent.com/63344463/122051003-bd3b4780-ce01-11eb-8e97-ee62d3e48144.jpg)
