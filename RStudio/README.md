@@ -56,10 +56,10 @@ For detailed steps on prerequisites [Click here](https://github.com/RLOpenCataly
 
 ### Implementation
 * Refer to the Implementation [guide](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/tree/main/RStudio/machine-images/config/infra/README.md) to deploy EC2-RStudio-Server.
-* To deploy EC2-RStudio-Server, you will have to add EC2-RStudio-Server CFT as a product in SWB Service Catalog
+
 
 ### Configuration
-* Post adding EC2-RStudio-Server CFT to SWB Service Catalog product portfolio do the following steps:
+* After running the installer scripts as mentioned in the Implementation guide, do the following steps:
     1. Login to SWB as admin.
     2. Navigate to Workspace Types to import EC2-RStudio-Server.
     3. Configure EC2-RStudio-Server with input parameters.
@@ -81,7 +81,7 @@ For detailed steps on prerequisites [Click here](https://github.com/RLOpenCataly
        
     4. Launch EC2-RStudio-Server Workspace to provision an RStudio Server. 
 
-## New Customer Registration for RStudio with ALB 
+## New Customer Registration for EC2-RStudio-Server 
 As part of an ongoing collaboration with AWS SWB teams, we expect customers would need help with implementation, support, and ongoing enhancements of the above solution. Kindly register with Relevance Lab to get these benefits. 
 
 
