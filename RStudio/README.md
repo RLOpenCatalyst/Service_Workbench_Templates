@@ -14,17 +14,21 @@ presigned URL.
 
 ## Key Features
 Below are a few key features of EC2-RStudio-Server 
-*	The shared AWS ALB used with AWS ACM certificates for each Hosting Account simplifies the Certificate Management Lifecycle.
-*	Use unique self-signed certificate to encrypt ALB and RStudio EC2 to ensure secure connection, thus enabling encrypted connection per RStudio.
+*	Latest version of RStudio Server
+*	Commonly used packages pre-installed
+*	Easy connection to the instance using a pre-authenticated URL launched from within Service Workbench
+*	Secure SSL connection to RStudio Server using Amazon issued certificates managed in AWS Certificate Manager (ACM)
+*	Shared AWS Application Load-balancer (ALB) used with AWS ACM certificates for each Hosting Account simplifies the Certificate Management Lifecycle.
+*	Use unique self-signed certificate to encrypt traffic between ALB and RStudio EC2 to ensure secure connection from end to end.
            
 ## RStudio AMI
-* The current Rstudio AMI is embedded with a user provided certificate and key for the custom domain. The new design will eliminate the need for those 
+* The Rstudio AMI bundled with SWB is embedded with a user provided certificate and key for the custom domain. The new design will eliminate the need for those 
 and bake the AMI with self signed certificates. The self signed certificates are used to encrypt only the traffic between ALB and EC2.
 The AMI is also packed with additional R packages that are commonly used by the researchers.
     
     |RStudio Server Version | 
     |-----------------------| 
-    |      1.3.959          | 
+    |      1.4.1717          | 
     
             
     | Additional Packages Installed |
@@ -46,9 +50,9 @@ The AMI is also packed with additional R packages that are commonly used by the 
 
    * This also means that Service Workbench must be deployed with a custom domain for RStudio to work properly. In order to configure your custom domain name, please override and specify the following config settings in your main/config/settings/$stage.yml file:
 
-   * domainName
-   * certificateArn
-   * hostedZoneId
+       * domainName
+       * certificateArn
+       * hostedZoneId
 * Generate a new SSL Certificate for the Hosting accounts in AWS.
  
 
