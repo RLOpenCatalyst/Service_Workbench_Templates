@@ -1,14 +1,12 @@
 # EC2-RStudio-Server* on AWS Service Workbench
 *RStudio with Application Load Balancer (ALB)
 
-Researchers use RStudio very commonly in their day to day efforts. While RStudio is a popular product, the process of installing RStudio securely on AWS Cloud and using it in a cost effective manner is a non-trivial task specially for Researchers. With AWS SWB the goal is to make this process very simple, secure and cost effective for Researchers so that they can focus on “Science” and not “Servers” thereby increasing their productivity.
+Researchers use RStudio very commonly in their day-to-day efforts. While RStudio is a popular product, the process of installing RStudio securely on AWS Cloud and using it in a cost-effective manner is a non-trivial task, especially for Researchers. With AWS SWB, the goal is to make this process very simple, secure, and cost-effective for Researchers so that they can focus on “Science” and not “Servers” thereby increasing their productivity.
   
   ![image](https://user-images.githubusercontent.com/73109773/120605679-f7086780-c46b-11eb-9b50-8bfe546e6094.png)
 
  
-EC2-RStudio-Server on Service Workbench is a comprehensive solution with an Application Load Balancer (ALB).  While launched through SWB Workspaces 
-the ALB is shared between multiple RStudio instances within same AWS account. Using ALB, secure access to each RStudio instance over unique 
-presigned URL.
+EC2-RStudio-Server on Service Workbench is a comprehensive solution with an Application Load Balancer (ALB). When launched through SWB Workspaces, the ALB is shared between multiple RStudio instances within the same AWS account. Using ALB, secure access to each RStudio instance over a unique presigned URL.
 
   ![image](https://user-images.githubusercontent.com/73109773/119657685-d62b8b00-be49-11eb-9618-95dfd8d7bea6.png)
 
@@ -22,9 +20,7 @@ Below are a few key features of EC2-RStudio-Server
 *	Use unique self-signed certificate to encrypt traffic between ALB and RStudio EC2 to ensure secure connection from end to end.
            
 ## RStudio AMI
-* The Rstudio AMI bundled with SWB is embedded with a user provided certificate and key for the custom domain. The new design will eliminate the need for those 
-and bake the AMI with self signed certificates. The self signed certificates are used to encrypt only the traffic between ALB and EC2.
-The AMI is also packed with additional R packages that are commonly used by the researchers.
+* The Rstudio AMI bundled with SWB is embedded with a user-provided certificate and key for the custom domain. The new design will eliminate the need for those and bake the AMI with self-signed certificates. The self-signed certificates are used to encrypt only the traffic between ALB and EC2. The AMI is also packed with additional R packages that are commonly used by the researchers.
     
     |RStudio Server Version | 
     |-----------------------| 
@@ -56,7 +52,7 @@ The AMI is also packed with additional R packages that are commonly used by the 
 * Generate a new SSL Certificate for the Hosting accounts in AWS.
  
 
-For detailed steps on prerequisites [Click here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/prerequisites/prerequisite.md)
+For detailed steps on prerequisites [click here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/prerequisites/prerequisite.md)
 
 ### Implementation
 * Refer to the Implementation [guide](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/tree/main/RStudio/machine-images/config/infra/README.md) to deploy EC2-RStudio-Server.
