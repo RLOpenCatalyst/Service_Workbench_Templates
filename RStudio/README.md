@@ -85,8 +85,7 @@ For detailed steps on prerequisites [click here](https://github.com/RLOpenCataly
 As part of an ongoing collaboration with AWS SWB teams, we expect customers would need help with implementation, support, and ongoing enhancements of the above solution. Kindly register with Relevance Lab to get these benefits. 
 
 
-![black-simple-finger-presses-on-260nw-1406883221](https://user-images.githubusercontent.com/63344463/122756557-2ca6b080-d2b4-11eb-97c1-d45d42919230.jpg)
-](https://gd1.relevancelab.com/registration-form/)
+![image](https://user-images.githubusercontent.com/63344463/122757207-ffa6cd80-d2b4-11eb-9a23-0fc68b7541bf.png)(https://gd1.relevancelab.com/registration-form/)
 
 
 
