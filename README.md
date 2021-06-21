@@ -17,8 +17,11 @@ Relevance Lab (RL), in partnership with AWS, set out to make the experience of u
 # Getting started with EC2-RStudio-Server for Service Workbench on AWS
 
 
-|  Steps            |   Activities          |   Links             |
-|  Steps            |   Activities          |   Links             |
+| Steps | Activities | Links |   |   |
+|-------|------------|-------|---|---|
+|       |            |       |   |   |
+|       |            |       |   |   |
+|       |            |       |   |   |
 
 
 # Registration for a new Customer and Support Process details
