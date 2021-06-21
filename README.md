@@ -10,6 +10,8 @@ Cloud computing offers the research community access to vast amounts of computat
 
 RStudio is a popular software used by the Scientific Research Community and supported by AWS Service Workbench (SWB). Researchers use RStudio very commonly in their day-to-day efforts. While RStudio is a popular product, the process of installing RStudio securely on AWS Cloud and using it in a cost-effective manner is a non-trivial task, especially for Researchers. With AWS SWB, the goal is to make this process very simple, secure, and cost-effective for Researchers so that they can focus on “Science” and not “Servers” thereby, increasing their productivity.
 
+To get started with RStudio on SWB provided by Relevance Lab Click here[https://github.com/RLOpenCatalyst/Service_Workbench_Templates/tree/main/RStudio]
+
 Relevance Lab (RL), in partnership with AWS, set out to make the experience of using RStudio with AWS Service Workbench simple and secure.
 
 # Registration for a new Customer and Support Process details
