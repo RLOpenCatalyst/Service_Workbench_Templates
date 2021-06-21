@@ -134,8 +134,13 @@ def createStack(roleName, stackName, portfolioId):
     client = boto3.client('cloudformation')
     roleExist = IsRoleNameExist(roleName)
     if roleExist:
-        # if('portfolioId' not in configuration.keys()):
-        #     raise Exception("Please add Portfolio ID into stage file")
+        if('portfolioId' not in configuration.keys()):
+            portfolioId = getPortfolioIdUsingRoleName(roleName)
+        else:
+            portfolioId = configuration['portfolioId']
+            checkIfPortfolioExistInAccount()
+        if portfolioId == '':
+            raise Exception("Portfolio ID value is not available. Please enter Portfolio ID value into stage file or check your SWB installated account")
         # if(stackName is None or configuration['portfolioId'] is None ):
         #     raise Exception("Portfolio ID value is not available. Please enter Portfolio ID value into stage file")
         # checkIfPortfolioExistInAccount()
@@ -251,8 +256,8 @@ if __name__ == "__main__":
                 The script also needs the AWS region into which the SWB installation was made. It looks for the awsRegion key in the yaml file.''')
         args=parser.parse_args()
         roleName,stackName = formRoleName()
-        portfolioId = getPortfolioIdUsingRoleName(roleName)
-        stackResponse = createStack(roleName,stackName,portfolioId)
+        #portfolioId = getPortfolioIdUsingRoleName(roleName)
+        stackResponse = createStack(roleName,stackName)
         getStackEvents(stackName)
         describeStack(stackName)
     except Exception as e:
@@ -262,6 +267,8 @@ if __name__ == "__main__":
             print('Launch Role does not exist in your main SWB installation account. Please contact your administrator or check your stage file')
         elif('InvalidParameterValue' in e.message and 'DescribeRegions' in e.message):
             print('AWS region name provided in the stage file is invalid. Please add region name that you have used during SWB installation into your stage file')
+        elif('AlreadyExistsException' in e.message and 'CreateStack' in e.message):
+            print('A stack with the same configurations already exist. So the RStudio-server template will be available as part of your current SWB deployment. Please check by logging in as an administrator into SWB')
         else:
             print('Exception ',e)
         if stackName != '':
