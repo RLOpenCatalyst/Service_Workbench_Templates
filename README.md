@@ -17,11 +17,13 @@ Relevance Lab (RL), in partnership with AWS, set out to make the experience of u
 # Getting started with EC2-RStudio-Server for Service Workbench on AWS
 
 
-| Steps  | Activities                                                         | Links                                   |   |   |
-|--------|--------------------------------------------------------------------|-----------------------------------------|---|---|
-| Step-1 | *Install the SWB Enterprise instance with custom domain* Something | [my link](https://www.relevancelab.com) |   |   |
-|        |                                                                    |                                         |   |   |
-|        |                                                                    |                                         |   |   |
+| Steps  | Activities                                                                                                                                                                                                                                                                                                                                                  | Links                          |   |
+|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|---|
+| Step-1 | Install the SWB Enterprise instance with Custom Domain. It is very important that the SWB instance is deployed with a custom domain option. This allows you to request an Amazon-issued certificate using ACM for your domain, and this certificate can then be used to provide secure access to your SWB instance and the resources provisioned using SWB. | Documentation Deployment guide |   |
+|        |                                                                                                                                                                                                                                                                                                                                                             |                                |   |
+|        |                                                                                                                                                                                                                                                                                                                                                             |                                |   |
+|        |                                                                                                                                                                                                                                                                                                                                                             |                                |   |
+
 
 
 # Registration for a new Customer and Support Process details
