@@ -23,4 +23,4 @@ Once signed up, Customers can raise an issue as shown below.
 ![Support Process](https://user-images.githubusercontent.com/63344463/122383529-893e5e80-cf88-11eb-965b-da984dcba1a4.jpg)
 
 
-[![Signup](https://user-images.githubusercontent.com/64137641/122388046-1f748380-cf8d-11eb-8b01-114eca8d16f7.jpg)](https://gd1.relevancelab.com/registration-form/)
+[![SignUp](https://user-images.githubusercontent.com/63344463/122757544-5f04dd80-d2b5-11eb-9a76-87391229b1cd.png)](https://gd1.relevancelab.com/registration-form/)
