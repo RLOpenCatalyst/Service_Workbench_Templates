@@ -1,30 +1,30 @@
 # EC2-RStudio-Server* on AWS Service Workbench
 *RStudio with Application Load Balancer (ALB)
 
-Researchers use RStudio very commonly in their day to day efforts. While RStudio is a popular product, the process of installing RStudio securely on AWS Cloud and using it in a cost effective manner is a non-trivial task specially for Researchers. With AWS SWB the goal is to make this process very simple, secure and cost effective for Researchers so that they can focus on “Science” and not “Servers” thereby increasing their productivity.
+Researchers use RStudio very commonly in their day-to-day efforts. While RStudio is a popular product, the process of installing RStudio securely on AWS Cloud and using it in a cost-effective manner is a non-trivial task, especially for Researchers. With AWS SWB, the goal is to make this process very simple, secure, and cost-effective for Researchers so that they can focus on “Science” and not “Servers” thereby increasing their productivity.
   
   ![image](https://user-images.githubusercontent.com/73109773/120605679-f7086780-c46b-11eb-9b50-8bfe546e6094.png)
 
  
-EC2-RStudio-Server on Service Workbench is a comprehensive solution with an Application Load Balancer (ALB).  While launched through SWB Workspaces 
-the ALB is shared between multiple RStudio instances within same AWS account. Using ALB, secure access to each RStudio instance over unique 
-presigned URL.
+EC2-RStudio-Server on Service Workbench is a comprehensive solution with an Application Load Balancer (ALB). When launched through SWB Workspaces, the ALB is shared between multiple RStudio instances within the same AWS account. Using ALB, secure access to each RStudio instance over a unique presigned URL.
 
   ![image](https://user-images.githubusercontent.com/73109773/119657685-d62b8b00-be49-11eb-9618-95dfd8d7bea6.png)
 
 ## Key Features
 Below are a few key features of EC2-RStudio-Server 
-*	The shared AWS ALB used with AWS ACM certificates for each Hosting Account simplifies the Certificate Management Lifecycle.
-*	Use unique self-signed certificate to encrypt ALB and RStudio EC2 to ensure secure connection, thus enabling encrypted connection per RStudio.
+*	Latest version of RStudio Server
+*	Commonly used packages pre-installed
+*	Easy connection to the instance using a pre-authenticated URL launched from within Service Workbench
+*	Secure SSL connection to RStudio Server using Amazon issued certificates managed in AWS Certificate Manager (ACM)
+*	Shared AWS Application Load-balancer (ALB) used with AWS ACM certificates for each Hosting Account simplifies the Certificate Management Lifecycle.
+*	Use unique self-signed certificate to encrypt traffic between ALB and RStudio EC2 to ensure secure connection from end to end.
            
 ## RStudio AMI
-* The current Rstudio AMI is embedded with a user provided certificate and key for the custom domain. The new design will eliminate the need for those 
-and bake the AMI with self signed certificates. The self signed certificates are used to encrypt only the traffic between ALB and EC2.
-The AMI is also packed with additional R packages that are commonly used by the researchers.
+* The Rstudio AMI bundled with SWB is embedded with a user-provided certificate and key for the custom domain. The new design will eliminate the need for those and bake the AMI with self-signed certificates. The self-signed certificates are used to encrypt only the traffic between ALB and EC2. The AMI is also packed with additional R packages that are commonly used by the researchers.
     
     |RStudio Server Version | 
     |-----------------------| 
-    |      1.3.959          | 
+    |      1.4.1717          | 
     
             
     | Additional Packages Installed |
@@ -46,20 +46,20 @@ The AMI is also packed with additional R packages that are commonly used by the 
 
    * This also means that Service Workbench must be deployed with a custom domain for RStudio to work properly. In order to configure your custom domain name, please override and specify the following config settings in your main/config/settings/$stage.yml file:
 
-   * domainName
-   * certificateArn
-   * hostedZoneId
+       * domainName
+       * certificateArn
+       * hostedZoneId
 * Generate a new SSL Certificate for the Hosting accounts in AWS.
  
 
-For detailed steps on prerequisites [Click here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/prerequisites/prerequisite.md)
+For detailed steps on prerequisites [click here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/prerequisites/prerequisite.md)
 
 ### Implementation
 * Refer to the Implementation [guide](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/tree/main/RStudio/machine-images/config/infra/README.md) to deploy EC2-RStudio-Server.
-* To deploy EC2-RStudio-Server, you will have to add EC2-RStudio-Server CFT as a product in SWB Service Catalog
+
 
 ### Configuration
-* Post adding EC2-RStudio-Server CFT to SWB Service Catalog product portfolio do the following steps:
+* After running the installer scripts as mentioned in the Implementation guide, do the following steps:
     1. Login to SWB as admin.
     2. Navigate to Workspace Types to import EC2-RStudio-Server.
     3. Configure EC2-RStudio-Server with input parameters.
@@ -81,11 +81,11 @@ For detailed steps on prerequisites [Click here](https://github.com/RLOpenCataly
        
     4. Launch EC2-RStudio-Server Workspace to provision an RStudio Server. 
 
-## New Customer Registration for RStudio with ALB 
+## New Customer Registration for EC2-RStudio-Server 
 As part of an ongoing collaboration with AWS SWB teams, we expect customers would need help with implementation, support, and ongoing enhancements of the above solution. Kindly register with Relevance Lab to get these benefits. 
 
 
-[![Signup](https://user-images.githubusercontent.com/64137641/122388046-1f748380-cf8d-11eb-8b01-114eca8d16f7.jpg)](https://gd1.relevancelab.com/registration-form/)
+[![SignUp](https://user-images.githubusercontent.com/63344463/122757544-5f04dd80-d2b5-11eb-9a76-87391229b1cd.png)](https://gd1.relevancelab.com/registration-form/)
 
 
 
