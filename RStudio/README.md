@@ -81,6 +81,7 @@ For detailed steps on prerequisites [click here](https://github.com/RLOpenCataly
        | ACMSSLCertARN | The ARN of the AWS Certificate Manager SSL Certificate to associate with the Load Balancer |
        
     4. Launch EC2-RStudio-Server Workspace to provision an RStudio Server. 
+* **NOTE**: We can use t3.medium as minimum and t3.xlarge or larger as recommended instance type. Also it is recommended to use more than 100GB of disk space.
 
 ## New Customer Registration for EC2-RStudio-Server 
 As part of an ongoing collaboration with AWS SWB teams, we expect customers would need help with implementation, support, and ongoing enhancements of the above solution. Kindly register with Relevance Lab to get these benefits. 
