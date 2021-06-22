@@ -3,7 +3,9 @@
 
 # Service_Workbench_Templates
 
-# Relevance Lab and AWS Partnership for Service WorkBench on AWS 
+# Relevance Lab Collaborates with Service Workbench on AWS for Open-Source Solutions
+
+# Relevance Lab Collaborates with Service Workbench on AWS for Frictionless Scientific Research
 Relevance Lab RLCatalyst Research Gateway and Service Workbench on AWS (SWB) teams are committed to making scientific research frictionless for researchers. With a shared goal, this new initiative speeds up the collaboration and will help provide new innovative open-source solutions leveraging Service Workbench and partner-provided solutions like this RStudio with ALB from Relevance Lab. The collaboration efforts will soon be adding more solutions covering the Genomic Pipeline Orchestration with Nextflow, use of HPC Parallel Cluster, and secure research workspaces with AppStream 2.0, so stay tuned.
 
 Cloud computing offers the research community access to vast amounts of computational power, storage, specialized data tools, and public data sets, collectively referred to as Research IT, with the added benefit of paying only for what is used. However, researchers may not be experts in using the AWS Console to provision these services in the right way. This is where software solutions like Service Workbench on AWS (SWB) make it possible to deliver scientific research computing resources in a secure and easily accessible manner.
