@@ -23,7 +23,7 @@ Relevance Lab (RL), in partnership with AWS, set out to make the experience of u
 # Getting started with EC2-RStudio-Server for Service Workbench on AWS
 
 
-|    Steps      |   Activities   |   Links                          |
+|    Steps        |   Activities   |   Links                          |
 |--------|------------|--------------------------------|
 | Step-1  | **Install the SWB Enterprise instance with Custom Domain.** It is very important that the SWB instance is deployed with a custom domain option. This allows you to request an Amazon-issued certificate using ACM for your domain, and this certificate can then be used to provide secure access to your SWB instance and the resources provisioned using SWB. | [Documentation](https://docs.aws.amazon.com/solutions/latest/service-workbench-on-aws/overview.html) [Deployment guide](https://docs.aws.amazon.com/solutions/latest/service-workbench-on-aws/automated-deployment.html) 
 | Step-2 |    **Add ACM certificate to the hosting account.** It is best to set up your SWB domain (e.g. swb.yourdomain.com) as its own hosted zone. See “Set up routing for your sub-domain”. Then request a new SSL certificate in AWS ACM  | a. [Setup routing for your sub-domain](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-routing-traffic-for-subdomains.html) b. [Request a new SSL certificate in AWS Certificate Manager](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html)|
