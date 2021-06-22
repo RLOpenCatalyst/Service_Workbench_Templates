@@ -37,11 +37,11 @@ Relevance Lab (RL), in partnership with AWS, set out to make the experience of u
 
 As shown below, Customers who wish to use Relevance Lab Custom Solution and wish to get support for issues, upgrades will need to signup as shown below. You can do so by clicking on the sign up button below.
 
-![Signup Process](https://user-images.githubusercontent.com/63344463/122382998-10d79d80-cf88-11eb-9cea-562a958e0346.jpg)
+![Github com-Customer-New-Registration-02](https://user-images.githubusercontent.com/63344463/122897143-5b319380-d367-11eb-84c5-43efa5062e19.png)
 
 Once signed up, Customers can raise an issue as shown below.
 
-![Support Process](https://user-images.githubusercontent.com/63344463/122383529-893e5e80-cf88-11eb-965b-da984dcba1a4.jpg)
+![Github com-Customer-New-Registration-01](https://user-images.githubusercontent.com/63344463/122897185-64226500-d367-11eb-9171-4ed41da57fc4.png)
 
 
 [![Signup-06](https://user-images.githubusercontent.com/63344463/122896600-d8103d80-d366-11eb-94c6-17a0ceefa303.png)](https://gd1.relevancelab.com/registration-form/)
