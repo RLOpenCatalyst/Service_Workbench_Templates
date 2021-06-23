@@ -42,17 +42,6 @@ Below are a few key features of EC2-RStudio-Server
      
 ## Getting Started
 ### Prerequisite
-* Before deploying EC2-RStudio-Server, create Service Workbench with a custom domain associated with SSL certificate.
-   * The current implementation assigns hostnames to RStudio instances with the form rstudio-$env.$domain_name where $env is the environment identifier for the workspace, and $domain_name is the custom domain used for Service Workbench. This means that all certificates (the private key and the certificate chain mentioned above) must be for the wildcard (*.$domain_name). Failing to do so would cause nginx to not start in the EC2 instance that is backing the RStudio environment. You could also check if nginx setup is successful by running "systemctl restart nginx" on this EC2 instance.
-
-   * This also means that Service Workbench must be deployed with a custom domain for RStudio to work properly. In order to configure your custom domain name, please override and specify the following config settings in your main/config/settings/$stage.yml file:
-
-       * domainName
-       * certificateArn
-       * hostedZoneId
-* Generate a new SSL Certificate for the Hosting accounts in AWS.
- 
-
 For detailed steps on prerequisites [click here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/prerequisites/prerequisite.md)
 
 ### Implementation
