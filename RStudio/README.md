@@ -33,8 +33,7 @@ Below are a few key features of EC2-RStudio-Server
     |      tidyverse                |    1.3.1 | We can perform subsetting, transforming, visualizing with data                                                                     |
     |      devtools                 |    2.4.0 | It provides R functions that simplify many common task                                                                          |
     |      kableExtra               |    1.3.4 | It is to help you build common complex tables and manipulate table style                                                        |
-    |      survival                 |   3.2.10 | This helps you to do survival analysis
-                                                                                  |
+    |      survival                 |   3.2.10 | This helps you to do survival analysis |
     |      survminer                |    0.4.9 | It provides functions for facilitating survival analysis and visualization                                                    |
     |      MASS                     | 7.3.53.1 | The package MASS (for Modern Applied Statistics with S) into memory                                                                |
     |      quantreg                 |     5.85 | It performs estimation and inference on the conditional quantile function, its first derivative, and its second derivative over a region of covariate values and/or quantile indices                                      |
