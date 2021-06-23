@@ -1,4 +1,4 @@
-# EC2-RStudio-Server* on AWS (Service Workbench)
+# EC2-RStudio-Server* for Service Workbench on AWS
 *RStudio with Application Load Balancer (ALB)
 
 Researchers commonly use RStudio in their day-to-day efforts. While RStudio is a popular product, the process of installing RStudio securely on AWS Cloud and using it in a cost-effective manner is a non-trivial task, especially for Researchers. With Service Workbench on AWS (SWB), the goal is to make this process very simple, secure, and cost-effective for Researchers so that they can focus on “Science” and not “Servers” thereby increasing their productivity.
@@ -13,7 +13,7 @@ EC2-RStudio-Server on Service Workbench is a comprehensive solution with an Appl
 
 ## Key Features
 Below are a few key features of EC2-RStudio-Server 
-*	Latest version of RStudio Server
+*	Latest version of RStudio Server (1.4.1717)
 *	Commonly used packages pre-installed
 *	Easy connection to the instance using a pre-authenticated URL launched from within Service Workbench
 *	Secure SSL connection to RStudio Server using Amazon issued certificates managed in AWS Certificate Manager (ACM)
