@@ -25,24 +25,25 @@ Below are a few key features of EC2-RStudio-Server
     
     |RStudio Server Version | 
     |-----------------------| 
-    |      1.4.1717          | 
+    |      1.4.1717         | 
     
             
-    | Additional Packages Installed |
-    | ------------------------------|
-    |      tidyverse                |
-    |      devtools                 |
-    |      kableExtra               |
-    |      survival                 |
-    |      survminer                |
-    |      MASS                     |
-    |      quantreg                 |
-    |      DescTools                |
+    | Additional Packages Installed |  Version |          Description                                |
+    | ------------------------------|----------|-----------------------------------------------------|
+    |      tidyverse                |    1.3.1 | We can perform subsetting, transforming, visualizing with data                                                                     |
+    |      devtools                 |    2.4.0 | It provides R functions that simplify many common task                                                                          |
+    |      kableExtra               |    1.3.4 | It is to help you build common complex tables and manipulate table style                                                        |
+    |      survival                 |   3.2.10 | This helps you to do survival analysis
+                                                                                  |
+    |      survminer                |    0.4.9 | It provides functions for facilitating survival analysis and visualization                                                    |
+    |      MASS                     | 7.3.53.1 | The package MASS (for Modern Applied Statistics with S) into memory                                                                |
+    |      quantreg                 |     5.85 | It performs estimation and inference on the conditional quantile function, its first derivative, and its second derivative over a region of covariate values and/or quantile indices                                      |
+    |      DescTools                |  0.99.41 | It is an extensive collection of miscellaneous basic statistics functions and comfort wrappers not available in the R basic system |
     
      
 ## Getting Started
 ### Prerequisite
-For detailed steps on prerequisites [click here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/prerequisites/prerequisite.md)
+* For detailed steps on prerequisites [click here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/prerequisites/prerequisite.md)
 
 ### Implementation
 * Refer to the Implementation [guide](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/tree/main/RStudio/machine-images/config/infra/README.md) to deploy EC2-RStudio-Server.
