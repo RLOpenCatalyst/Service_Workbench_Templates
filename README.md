@@ -35,7 +35,7 @@ As shown below, Customers who wish to use Relevance Lab Custom Solution and wish
 
 Once signed up, Customers can raise an issue as shown below.
 
-![Github com-Customer-New-Registration-01]![Github com-Customer-New-Registration-01B](https://user-images.githubusercontent.com/64137641/123082007-35c28980-d43c-11eb-8efe-ac63c2b60863.png)
+![Github com-Customer-New-Registration-01B](https://user-images.githubusercontent.com/64137641/123082007-35c28980-d43c-11eb-8efe-ac63c2b60863.png)
 
 As part of an ongoing collaboration with SWB teams using an open-source model, we expect customers to need help with implementation, support, and ongoing enhancements of the above solutions. Sign up with Relevance Lab to start getting benefits.
 
