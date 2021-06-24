@@ -70,12 +70,12 @@ Below are a few key features of EC2-RStudio-Server
        | ACMSSLCertARN | The ARN of the AWS Certificate Manager SSL Certificate to associate with the Load Balancer |
        
     4. Launch EC2-RStudio-Server Workspace to provision an RStudio Server. 
-* **NOTE**: Following are the recommended configurations for EC2 instance type.
+* **NOTE**: Following are the recommended configurations for EC2 instance type. <br />
 
-      | Configuration item | Minimum   | Recommended |
-      |--------------------|-----------|-------------|
-      | Instance type      | t3.medium | t3.xlarge + |
-      | Hard disk          | 100GB     | 100GB +     |
+    | Configuration item | Minimum   | Recommended |
+    |--------------------|-----------|-------------|
+    | Instance type      | t3.medium | t3.xlarge + |
+    | Hard disk          | 100GB     | 100GB +     |
 
 ## New Customer Registration for EC2-RStudio-Server 
 As part of an ongoing collaboration with AWS SWB teams, we expect customers would need help with implementation, support, and ongoing enhancements of the above solution. Kindly register with Relevance Lab to get these benefits. 
