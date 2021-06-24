@@ -9,7 +9,7 @@ Researchers commonly use RStudio in their day-to-day efforts. While RStudio is a
  
 EC2-RStudio-Server on Service Workbench is a comprehensive solution with an Application Load Balancer (ALB). When launched through SWB Workspaces, the ALB is shared between multiple RStudio instances within the same AWS account. Using ALB, secure access to each RStudio instance over a unique presigned URL.
 
-  ![image](https://user-images.githubusercontent.com/73109773/119657685-d62b8b00-be49-11eb-9618-95dfd8d7bea6.png)
+  ![RStudio-Accesibility-Architecture](https://user-images.githubusercontent.com/58428150/123269798-f324ae00-d51c-11eb-9a47-3ebe37ccecc6.jpg)
 
 ## Key Features
 Below are a few key features of EC2-RStudio-Server 
