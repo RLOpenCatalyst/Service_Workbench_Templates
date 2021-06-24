@@ -23,9 +23,9 @@ Below are a few key features of EC2-RStudio-Server
 ## RStudio AMI
 * The Rstudio AMI bundled with SWB is embedded with a user-provided certificate and key for the custom domain. The new design will eliminate the need for those and bake the AMI with self-signed certificates. The self-signed certificates are used to encrypt only the traffic between ALB and EC2. The AMI is also packed with additional R packages that are commonly used by the researchers.
     
-    |RStudio Server Version | 
-    |-----------------------| 
-    |      1.4.1717         | 
+    | RStudio Server Version | R Version  |
+    |------------------------|------------| 
+    |      1.4.1717          |   3.6.3    |
     
             
     | Additional Packages Installed |  Version |          Description                                |
