@@ -8,7 +8,7 @@ RStudio is a popular software used by the Scientific Research Community and supp
 
 Relevance Lab (RL), in partnership with AWS, set out to make the experience of using RStudio with Service Workbench on AWS simple and secure.
 
-For more information about the collaboration, click [here](https://gd1.relevancelab.com/service-workbench-on-aws/#Contact%20us)
+For more information about the collaboration, click [here](https://relevancelab.com/service-workbench-on-aws/)
 
 To get started with RStudio on SWB provided by Relevance Lab, click [here](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/tree/main/RStudio)
 
