@@ -31,11 +31,11 @@ Below are a few key features of EC2-RStudio-Server
     | Packages Installed            |  Version |          Description                                |
     | ------------------------------|----------|-----------------------------------------------------|
     |      tidyverse                |    1.3.1 | Performs subsetting, transforming, visualizing with data                                                                     |
-    |      devtools                 |    2.4.0 | Provides R functions that simplify many common task                                                                          |
+    |      devtools                 |    2.4.0 | Provides R functions that simplifies many common tasks                                                                     |
     |      kableExtra               |    1.3.4 | Helps you build common complex tables and manipulate table style                                                        |
     |      survival                 |   3.2.10 | Helps you to do survival analysis |
     |      survminer                |    0.4.9 | Provides functions for facilitating survival analysis and visualization                                                    |
-    |      MASS                     | 7.3.53.1 | The package MASS (for Modern Applied Statistics with S) into memory                                                                |
+    |      MASS                     | 7.3.53.1 | Common library loads the package MASS (for Modern Applied Statistics with S) into memory                                  |
     |      quantreg                 |     5.85 | Performs estimation and inference on the conditional quantile function, its first derivative, and its second derivative over a region of covariate values and/or quantile indices                                      |
     |      DescTools                |  0.99.41 | It's an extensive collection of miscellaneous basic statistics functions and comfort wrappers not available in the R basic system |
     
@@ -70,7 +70,8 @@ Below are a few key features of EC2-RStudio-Server
        | ACMSSLCertARN | The ARN of the AWS Certificate Manager SSL Certificate to associate with the Load Balancer |
        
     4. Launch EC2-RStudio-Server Workspace to provision an RStudio Server. 
-* **NOTE**: Following are the recommended configurations for EC2 instance type
+* **NOTE**: Following are the recommended configurations for EC2 instance type.
+
       | Configuration item | Minimum   | Recommended |
       |--------------------|-----------|-------------|
       | Instance type      | t3.medium | t3.xlarge + |
