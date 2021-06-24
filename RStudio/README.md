@@ -28,16 +28,16 @@ Below are a few key features of EC2-RStudio-Server
     |      1.4.1717          |   3.6.3    |
     
             
-    | Additional Packages Installed |  Version |          Description                                |
+    | Packages Installed            |  Version |          Description                                |
     | ------------------------------|----------|-----------------------------------------------------|
-    |      tidyverse                |    1.3.1 | We can perform subsetting, transforming, visualizing with data                                                                     |
-    |      devtools                 |    2.4.0 | It provides R functions that simplify many common task                                                                          |
-    |      kableExtra               |    1.3.4 | It is to help you build common complex tables and manipulate table style                                                        |
-    |      survival                 |   3.2.10 | This helps you to do survival analysis |
-    |      survminer                |    0.4.9 | It provides functions for facilitating survival analysis and visualization                                                    |
+    |      tidyverse                |    1.3.1 | Performs subsetting, transforming, visualizing with data                                                                     |
+    |      devtools                 |    2.4.0 | Provides R functions that simplify many common task                                                                          |
+    |      kableExtra               |    1.3.4 | Helps you build common complex tables and manipulate table style                                                        |
+    |      survival                 |   3.2.10 | Helps you to do survival analysis |
+    |      survminer                |    0.4.9 | Provides functions for facilitating survival analysis and visualization                                                    |
     |      MASS                     | 7.3.53.1 | The package MASS (for Modern Applied Statistics with S) into memory                                                                |
-    |      quantreg                 |     5.85 | It performs estimation and inference on the conditional quantile function, its first derivative, and its second derivative over a region of covariate values and/or quantile indices                                      |
-    |      DescTools                |  0.99.41 | It is an extensive collection of miscellaneous basic statistics functions and comfort wrappers not available in the R basic system |
+    |      quantreg                 |     5.85 | Performs estimation and inference on the conditional quantile function, its first derivative, and its second derivative over a region of covariate values and/or quantile indices                                      |
+    |      DescTools                |  0.99.41 | It's an extensive collection of miscellaneous basic statistics functions and comfort wrappers not available in the R basic system |
     
      
 ## Getting Started
@@ -70,7 +70,11 @@ Below are a few key features of EC2-RStudio-Server
        | ACMSSLCertARN | The ARN of the AWS Certificate Manager SSL Certificate to associate with the Load Balancer |
        
     4. Launch EC2-RStudio-Server Workspace to provision an RStudio Server. 
-* **NOTE**: We can use t3.medium as minimum and t3.xlarge or larger as recommended instance type. Also it is recommended to use more than 100GB of disk space.
+* **NOTE**: Following are the recommended configurations for EC2 instance type
+      | Configuration item | Minimum   | Recommended |
+      |--------------------|-----------|-------------|
+      | Instance type      | t3.medium | t3.xlarge + |
+      | Hard disk          | 100GB     | 100GB +     |
 
 ## New Customer Registration for EC2-RStudio-Server 
 As part of an ongoing collaboration with AWS SWB teams, we expect customers would need help with implementation, support, and ongoing enhancements of the above solution. Kindly register with Relevance Lab to get these benefits. 
