@@ -61,11 +61,7 @@ Below are a few key features of EC2-RStudio-Server
        | EncryptionKeyArn | The ARN of the KMS encryption Key used to encrypt data in the instance |
        | EnvironmentInstanceFiles | An S3 URI (starting with "s3://") that specifies the location of files to be copied to the environment instance, including any bootstrap scripts |
        | IamPolicyDocument | The IAM policy to be associated with the launched workstation |
-       | InstanceType | 
-                        | Configuration item | Minimum   | Recommended |
-                        |--------------------|-----------|-------------|
-                        | Instance type      | t3.medium | t3.xlarge + |
-                        | Hard disk          | 100GB     | 100GB +     | |
+       | InstanceType | Instance type of EC2. Please refer to  the below note for recommended configuration|
        | KeyName  | Keypair name for SSH access |
        | Namespace | An environment name that will be prefixed to resource names |
        | S3Mounts | A JSON array of objects with name, bucket, and prefix properties used to mount data |
