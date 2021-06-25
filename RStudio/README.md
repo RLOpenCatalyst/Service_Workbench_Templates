@@ -30,14 +30,14 @@ Below are a few key features of EC2-RStudio-Server
             
     | Packages Installed            |  Version |          Description                                |
     | ------------------------------|----------|-----------------------------------------------------|
-    |      tidyverse                |    1.3.1 | Performs subsetting, transforming, visualizing with data                                                                     |
-    |      devtools                 |    2.4.0 | Provides R functions that simplifies many common tasks                                                                     |
-    |      kableExtra               |    1.3.4 | Helps you build common complex tables and manipulate table style                                                        |
-    |      survival                 |   3.2.10 | Helps you to do survival analysis |
-    |      survminer                |    0.4.9 | Provides functions for facilitating survival analysis and visualization                                                    |
-    |      MASS                     | 7.3.53.1 | Common library loads the package MASS (for Modern Applied Statistics with S) into memory                                  |
-    |      quantreg                 |     5.85 | Performs estimation and inference on the conditional quantile function, its first derivative, and its second derivative over a region of covariate values and/or quantile indices                                      |
-    |      DescTools                |  0.99.41 | It's an extensive collection of miscellaneous basic statistics functions and comfort wrappers not available in the R basic system |
+    | [tidyverse](https://www.tidyverse.org/)|    1.3.1 | Performs subsetting, transforming, visualizing with data                                                                     |
+    | [devtools](https://www.r-project.org/nosvn/pandoc/devtools.html)|    2.4.0 | Provides R functions that simplifies many common tasks                                                                     |
+    | [kableExtra](https://cran.r-project.org/web/packages/kableExtra/index.html)|    1.3.4 | Helps you build common complex tables and manipulate table style                                                        |
+    | [survival](https://cran.r-project.org/web/packages/survival/index.html) |   3.2.10 | Helps you to do survival analysis |
+    | [survminer](https://cran.r-project.org/web/packages/survminer/readme/README.html)                |    0.4.9 | Provides functions for facilitating survival analysis and visualization                                                    |
+    | [MASS](https://cran.r-project.org/web/packages/MASS/index.html) | 7.3.53.1 | Common library loads the package MASS (for Modern Applied Statistics with S) into memory                                  |
+    | [quantreg](https://cran.r-project.org/web/packages/quantreg/index.html) |     5.85 | Performs estimation and inference on the conditional quantile function, its first derivative, and its second derivative over a region of covariate values and/or quantile indices                                      |
+    | [DescTools](https://cran.r-project.org/web/packages/DescTools/index.html)   0.99.41 | It's an extensive collection of miscellaneous basic statistics functions and comfort wrappers not available in the R basic system |
     
      
 ## Getting Started
