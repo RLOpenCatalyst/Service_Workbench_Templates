@@ -37,7 +37,7 @@ Below are a few key features of EC2-RStudio-Server
     | [survminer](https://cran.r-project.org/web/packages/survminer/readme/README.html)                |    0.4.9 | Provides functions for facilitating survival analysis and visualization                                                    |
     | [MASS](https://cran.r-project.org/web/packages/MASS/index.html) | 7.3.53.1 | Common library loads the package MASS (for Modern Applied Statistics with S) into memory                                  |
     | [quantreg](https://cran.r-project.org/web/packages/quantreg/index.html) |     5.85 | Performs estimation and inference on the conditional quantile function, its first derivative, and its second derivative over a region of covariate values and/or quantile indices                                      |
-    | [DescTools](https://cran.r-project.org/web/packages/DescTools/index.html)   0.99.41 | It's an extensive collection of miscellaneous basic statistics functions and comfort wrappers not available in the R basic system |
+    | [DescTools](https://cran.r-project.org/web/packages/DescTools/index.html)|  0.99.41 | It's an extensive collection of miscellaneous basic statistics functions and comfort wrappers not available in the R basic system |
     
      
 ## Getting Started
@@ -61,7 +61,10 @@ Below are a few key features of EC2-RStudio-Server
        | EncryptionKeyArn | The ARN of the KMS encryption Key used to encrypt data in the instance |
        | EnvironmentInstanceFiles | An S3 URI (starting with "s3://") that specifies the location of files to be copied to the environment instance, including any bootstrap scripts |
        | IamPolicyDocument | The IAM policy to be associated with the launched workstation |
-       | InstanceType | EC2 instance type to launch |
+       | InstanceType | | Configuration item | Minimum   | Recommended |
+                        |--------------------|-----------|-------------|
+                        | Instance type      | t3.medium | t3.xlarge + |
+                        | Hard disk          | 100GB     | 100GB +     | |
        | KeyName  | Keypair name for SSH access |
        | Namespace | An environment name that will be prefixed to resource names |
        | S3Mounts | A JSON array of objects with name, bucket, and prefix properties used to mount data |
