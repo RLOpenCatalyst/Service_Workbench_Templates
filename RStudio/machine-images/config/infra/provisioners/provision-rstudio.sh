@@ -32,21 +32,22 @@ sudo useradd -m rstudio-user
 #Generate self signed certificate
 commonname=$(uname -n)
 password=dummypassword
-chmod 700 /tmp/rstudio
-cd /tmp/rstudio
+mkdir -p "/tmp/rstudiov2/ssl"
+chmod 700 /tmp/rstudiov2/ssl
+cd /tmp/rstudiov2/ssl
 openssl genrsa -des3 -passout pass:$password -out cert.key 2048
 #Remove passphrase from the key. Comment the line out to keep the passphrase
 openssl rsa -in cert.key -passin pass:$password -out cert.key
 openssl req -new -key cert.key -out cert.csr -passin pass:$password \
     -subj "/C=NA/ST=NA/L=NA/O=NA/OU=SWB/CN=$commonname/emailAddress=example.com"
 openssl x509 -req -days 365 -in cert.csr -signkey cert.key -out cert.pem
-cd "../.."
+cd "../../.."
 
 # Install and configure nginx
 sudo amazon-linux-extras install -y nginx1
 sudo openssl dhparam -out "/etc/nginx/dhparam.pem" 2048
-sudo mv "/tmp/rstudio/cert.pem" "/etc/nginx/"
-sudo mv "/tmp/rstudio/cert.key" "/etc/nginx/"
+sudo mv "/tmp/rstudiov2/ssl/cert.pem" "/etc/nginx/"
+sudo mv "/tmp/rstudiov2/ssl/cert.key" "/etc/nginx/"
 sudo mv "/tmp/rstudio/nginx.conf" "/etc/nginx/"
 sudo chown -R nginx:nginx "/etc/nginx"
 sudo chmod -R 600 "/etc/nginx"
