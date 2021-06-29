@@ -1,0 +1,53 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CloudFormation template to upload CFT to SC portfolio.
+Parameters:
+  PortfolioID:
+    Description: The SWB Service Catalog Portfolio ID to be associated to the RStudio v2
+    Type: String
+  RoleName:
+    Description: The SWB Service Catalog Launch Role
+    Type: String
+Resources:
+  RStudiocft:
+    Type: 'AWS::ServiceCatalog::CloudFormationProduct'
+    Properties:
+      Name: EC2-RStudio-Server
+      AcceptLanguage: en
+      Distributor: RL
+      Owner: RL
+      Description: RStudio Server running on EC2
+      ProvisioningArtifactParameters:
+        - Name: v1
+          Description: >
+               An RStudio instance accessible over SSL which comes with: 
+                * RStudio Server version 1.4.1717
+                * Connect securely via load balancer using Amazon issued certificates in ACM
+                * Fully loaded with commonly used R packages.
+          Info:
+            LoadTemplateFromURL: https://gitrstudiocft.s3.amazonaws.com/ec2-rlstudio.yaml
+  AssociateRStudiotoSWB:
+    Type: 'AWS::ServiceCatalog::PortfolioProductAssociation'
+    Properties:
+      AcceptLanguage: en
+      PortfolioId:
+        Ref: PortfolioID
+      ProductId: !Ref RStudiocft
+    DependsOn: RStudiocft
+  LaunchConstraint:
+    Type: 'AWS::ServiceCatalog::LaunchRoleConstraint'
+    Properties:
+      AcceptLanguage: en
+      PortfolioId:
+        Ref: PortfolioID
+      ProductId: !Ref RStudiocft
+      LocalRoleName:
+        Ref: RoleName
+      Description: !Join [ ' ',['Launch as local role ', Ref: RoleName]]
+    DependsOn: [RStudiocft,AssociateRStudiotoSWB]
+Outputs:
+  PortfolioID:
+    Description: ID of Portfolio to which RStudio CFT is uploaded.
+    Value: !Ref PortfolioID
+  ProductID:
+    Description: Product ID of RStudio v2.
+    Value: !Ref RStudiocft
