@@ -56,7 +56,7 @@ Below are a few key features of EC2-RStudio-Server
     
        | Name         |   Notes      |
        | ------------- | ------------- |
-       | AccessFromCIDRBlock  | The CIDR used to access the ec2 instances  |
+       | AccessFromCIDRBlock  | The CIDR block used to access the ec2 instances. Example:0.0.0.0/0 |
        | AmiId  | Amazon Machine Image for the EC2 instance  |
        | EncryptionKeyArn | The ARN of the KMS encryption Key used to encrypt data in the instance |
        | EnvironmentInstanceFiles | An S3 URI (starting with "s3://") that specifies the location of files to be copied to the environment instance, including any bootstrap scripts |
@@ -76,6 +76,33 @@ Below are a few key features of EC2-RStudio-Server
     |--------------------|-----------|-------------|
     | Instance type      | t3.medium | t3.xlarge + |
     | Hard disk          | 100GB     | 100GB +     |
+
+## How to connect
+Since RStudio currently requires a custom domain name, please configure the same by following the steps in the [link](https://github.com/awslabs/service-workbench-on-aws/blob/mainline/main/solution/machine-images/README.md)
+* The EC2 instance backing this workspace must be in the Ready state. Also make sure its security group allows your IP HTTPS access to it.
+* Click on the connections button and hit Connect.
+* The selected studies will show up as mounted directories in the RStudio. These study directories will contain files uploaded to the corresponding study. Any files uploaded to the study from the Service Workbench will automatically appear in the mounted study directories after a short delay.
+
+Notes:
+* If you're provisioning an RStudio instance with studies selected, these studies will only get mounted on your instance once you click on the RStudio workspace's "Terminal" tab.
+* If you started a previously stopped RStudio instance (manually or automatically) and connect to it, you might see an error dialog box saying the session closed abruptly. Although this typically does not affect your data, it is recommended to quit your session from within your RStudio workspace before stopping the instance through SWB.
+* The auto-stop feature is enabled by default and configured to 1 hour. For configuring a different auto-stop timeout, please assign the MAX_IDLE_MINUTES value accordingly in main/solution/machine-images/config/infra/files/rstudio/check-idle(Give our repo link) and redeploy the machine-images SDC.
+* To disable auto-stop, assign the value 0 to MAX_IDLE_MINUTES and redeploy machine-images SDC.
+
+## Start and Stop workspace
+RStudio workspaces can be stopped when not in use. Click the stop button to stop the workspace, and click the start button to start the workspace again.
+
+## EDIT CIDR
+We can edit CIDR blocks by adding or deleting. This block will determine who can access the RStudio.
+**NOTE**: We can add upto 4 CIDR blocks for port 443.
+
+## Common connection issues
+* Connection to workspace is restricted to specific CIDR block.
+* Check if your public IP is covered by the restricted CIDR block of the workspace.
+* Check if workspace type configuration has hard-coded value in field 'AccessFromCIDRBlock'. (Admin only)
+* If you're using VPN, your public IP address might change. Try disconnect VPN, and then connect to workspace.
+
+
 
 ## New Customer Registration for EC2-RStudio-Server 
 As part of an ongoing collaboration with AWS SWB teams, we expect customers would need help with implementation, support, and ongoing enhancements of the above solution. Kindly register with Relevance Lab to get these benefits. 
