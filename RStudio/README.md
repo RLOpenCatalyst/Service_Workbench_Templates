@@ -79,24 +79,24 @@ Below are a few key features of EC2-RStudio-Server
 
 ## How to connect
 Since RStudio currently requires a custom domain name, please configure the same by following the steps in the [link](https://github.com/awslabs/service-workbench-on-aws/blob/mainline/main/solution/machine-images/README.md)
-* The EC2 instance backing this workspace must be in the Ready state. Also make sure its security group allows your IP HTTPS access to it.
+* The EC2 instance backing this workspace must be in the Ready state.
 * Click on the connections button and hit Connect.
-* The selected studies will show up as mounted directories in the RStudio. These study directories will contain files uploaded to the corresponding study. Any files uploaded to the study from the Service Workbench will automatically appear in the mounted study directories after a short delay.
+* If you're provisioning an RStudio instance with studies selected, the selected studies will show up as mounted directories in the RStudio. These study directories will contain files uploaded to the corresponding study. Any files uploaded to the study from the Service Workbench will automatically appear in the mounted study directories after a short delay.
 
-Notes:
+**Notes**:
 * If you're provisioning an RStudio instance with studies selected, these studies will only get mounted on your instance once you click on the RStudio workspace's "Terminal" tab.
 * If you started a previously stopped RStudio instance (manually or automatically) and connect to it, you might see an error dialog box saying the session closed abruptly. Although this typically does not affect your data, it is recommended to quit your session from within your RStudio workspace before stopping the instance through SWB.
 * The auto-stop feature is enabled by default and configured to 1 hour. For configuring a different auto-stop timeout, please assign the MAX_IDLE_MINUTES value accordingly in [link](https://github.com/RLOpenCatalyst/Service_Workbench_Templates/tree/main/RStudio/machine-images/config/infra/files/rstudio/check-idle) and redeploy the machine-images SDC.
 * To disable auto-stop, assign the value 0 to MAX_IDLE_MINUTES and redeploy machine-images SDC.
 
-## Start and Stop workspace
+### Start and Stop workspace
 RStudio workspaces can be stopped when not in use. Click the stop button to stop the workspace, and click the start button to start the workspace again.
 
-## EDIT CIDR
+### EDIT CIDR
 We can edit CIDR blocks by adding or deleting. This block will determine who can access the RStudio. <br />
 **NOTE**: We can add upto 4 CIDR blocks for port 443.
 
-## Common connection issues
+### Common connection issues
 * Connection to workspace is restricted to specific CIDR block.
 * Check if your public IP is covered by the restricted CIDR block of the workspace.
 * Check if workspace type configuration has hard-coded value in field 'AccessFromCIDRBlock'. (Admin only)
