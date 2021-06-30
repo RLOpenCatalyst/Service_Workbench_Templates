@@ -9,7 +9,7 @@ import os
 import yaml
 import argparse
 
-templateURL = 'https://gitrstudiocft.s3.amazonaws.com/RstudioToServiceCatalog'
+templateURL = 'https://github.com/RLOpenCatalyst/Service_Workbench_Templates/blob/main/RStudio/cfn-templates/RstudioToServiceCatalog.yaml'
 regionShortNamesMap = {
   'us-east-2': 'oh',
   'us-east-1': 'va',
@@ -80,7 +80,7 @@ def formRoleName():
             commonName = fileName + '-' + regionShortName +'-'+ solutionName
             roleName = commonName + '-LaunchConstraint'
             stackName = commonName + '-rlrstudio'
-    return roleName, stackName
+    return roleName, stackName, commonName
 
 def getPortfolioIdUsingRoleName(roleName):
     portfolioFound = False
@@ -130,9 +130,18 @@ def checkIfPortfolioExistInAccount():
     print('Found the Portfolio ID ' + configuration['portfolioId'] + ' in the account ')
     return response
 
-def createStack(roleName, stackName, portfolioId):
+def parseTemplate():
+    cloudFormationClient = boto3.client('cloudformation')
+    with open("../../../cfn-templates/RstudioToServiceCatalog.yaml", "rb") as templateFileobj:
+        template_data = templateFileobj.read()
+    cloudFormationClient.validate_template(TemplateBody=template_data)
+    return template_data
+
+def createStack(roleName, stackName, bucketUrl):
     client = boto3.client('cloudformation')
     roleExist = IsRoleNameExist(roleName)
+    portfolioId = ''
+    templateBody = ''
     if roleExist:
         if('portfolioId' not in configuration.keys()):
             portfolioId = getPortfolioIdUsingRoleName(roleName)
@@ -141,12 +150,10 @@ def createStack(roleName, stackName, portfolioId):
             checkIfPortfolioExistInAccount()
         if portfolioId == '':
             raise Exception("Portfolio ID value is not available. Please enter Portfolio ID value into stage file or check your SWB installated account")
-        # if(stackName is None or configuration['portfolioId'] is None ):
-        #     raise Exception("Portfolio ID value is not available. Please enter Portfolio ID value into stage file")
-        # checkIfPortfolioExistInAccount()
+        templateBody = parseTemplate()
         response = client.create_stack(
             StackName=stackName,
-            TemplateURL=templateURL,
+            TemplateBody=templateBody,
             Parameters=[
                 {
                     'ParameterKey': 'PortfolioID',
@@ -155,6 +162,10 @@ def createStack(roleName, stackName, portfolioId):
                 {
                     'ParameterKey': 'RoleName',
                     'ParameterValue': roleName
+                },
+                {
+                    'ParameterKey': 'TemplateUrl',
+                    'ParameterValue': bucketUrl
                 }
             ])
     else:
@@ -246,6 +257,37 @@ def IsRoleNameExist(roleName):
     print('Found the Launch role '+ roleName + ' name in the account')
     return roleNameExists
 
+def getArtifactsBucketName(commonName):
+    accountId = boto3.client("sts").get_caller_identity()["Account"]
+    artifactsBucketName = accountId +'-' + commonName +'-artifacts'
+    s3Client = boto3.client('s3')
+    response = s3Client.head_bucket(
+        Bucket=artifactsBucketName
+    )
+    return artifactsBucketName
+
+def uploadRstudioTemplateToArtifactsBucketAndgetTheURL(bucketName):
+    print('Uploading the EC2-Rstudio server template to SWB artifacts bucket')
+    print('Bucket name ', bucketName)
+    s3Client = boto3.client('s3')
+    objectName = 'ec2-rstudio-server.cfn.yml'
+    bucketUrl = ''
+    path = os.getcwd()
+    mainPath = path.replace('/machine-images/config/infra','')
+    templatePath = os.path.join(mainPath, 'cfn-templates/ec2-rlstudio.yaml')
+    print('Template Path ', templatePath)
+    with open(templatePath, "rb") as f:
+        response = s3Client.upload_file(templatePath, bucketName, 'service-catalog-products/{}'.format(objectName))
+        print('Response of upload file object ',response)
+        preSignedUrlResponse = s3Client.generate_presigned_url('get_object',
+                                                    Params={'Bucket': bucketName,
+                                                            'Key': 'service-catalog-products/{}'.format(objectName)},
+                                                    ExpiresIn=3600)
+        response = json.dumps(preSignedUrlResponse, default=myconverter)
+        bucketUrl = response[1 : response.index('?')]
+        print('Bucket URL', bucketUrl)
+    return bucketUrl
+
 if __name__ == "__main__":
     try:
         parser=argparse.ArgumentParser(
@@ -255,9 +297,10 @@ if __name__ == "__main__":
                 The script also looks for the role that was created during SWB installation. It needs the solutionName in the yaml file to build the role-name.
                 The script also needs the AWS region into which the SWB installation was made. It looks for the awsRegion key in the yaml file.''')
         args=parser.parse_args()
-        roleName,stackName = formRoleName()
-        #portfolioId = getPortfolioIdUsingRoleName(roleName)
-        stackResponse = createStack(roleName,stackName)
+        roleName,stackName,commonName = formRoleName()
+        bucketName = getArtifactsBucketName(commonName)
+        bucketUrl = uploadRstudioTemplateToArtifactsBucketAndgetTheURL(bucketName)
+        stackResponse = createStack(roleName,stackName,bucketUrl)
         getStackEvents(stackName)
         describeStack(stackName)
     except Exception as e:
@@ -269,6 +312,8 @@ if __name__ == "__main__":
             print('AWS region name provided in the stage file is invalid. Please add region name that you have used during SWB installation into your stage file')
         elif('AlreadyExistsException' in e.message and 'CreateStack' in e.message):
             print('A stack with the same configurations already exist. So the RStudio-server template will be available as part of your current SWB deployment. Please check by logging in as an administrator into SWB')
+        elif('Not Found' in e.message):
+            print('Please use the AWS credentials of SWB deployment in the aws Configure or check the stage file')
         else:
             print('Exception ',e)
         if stackName != '':

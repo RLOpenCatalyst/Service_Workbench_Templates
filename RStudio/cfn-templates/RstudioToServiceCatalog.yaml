@@ -7,6 +7,9 @@ Parameters:
   RoleName:
     Description: The SWB Service Catalog Launch Role
     Type: String
+  TemplateUrl:
+    Description: This is the url of RStudio-server template
+    Type: String
 Resources:
   RStudiocft:
     Type: 'AWS::ServiceCatalog::CloudFormationProduct'
@@ -24,7 +27,8 @@ Resources:
                 * Connect securely via load balancer using Amazon issued certificates in ACM
                 * Fully loaded with commonly used R packages.
           Info:
-            LoadTemplateFromURL: https://gitrstudiocft.s3.amazonaws.com/ec2-rlstudio.yaml
+            LoadTemplateFromURL: 
+              Ref: TemplateUrl
   AssociateRStudiotoSWB:
     Type: 'AWS::ServiceCatalog::PortfolioProductAssociation'
     Properties:
