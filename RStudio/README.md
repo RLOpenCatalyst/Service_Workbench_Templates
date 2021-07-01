@@ -56,14 +56,14 @@ Below are a few key features of EC2-RStudio-Server
     
        | Name         |   Notes      |
        | ------------- | ------------- |
-       | AccessFromCIDRBlock  | The CIDR block used to access the ec2 instances. Example:0.0.0.0/0 |
-       | AmiId  | Amazon Machine Image for the EC2 instance  |
-       | EncryptionKeyArn | The ARN of the KMS encryption Key used to encrypt data in the instance |
+       | AccessFromCIDRBlock  | The CIDR block used to access the ec2 instances. Example: 0.0.0.0/0 |
+       | AmiId  | Amazon Machine Image for the EC2 instance which is pre-installed with R packages and Rstudio server |
+       | EncryptionKeyArn | The ARN of the KMS encryption Key used to encrypt data in the instance.|
        | EnvironmentInstanceFiles | An S3 URI (starting with "s3://") that specifies the location of files to be copied to the environment instance, including any bootstrap scripts |
        | IamPolicyDocument | The IAM policy to be associated with the launched workstation |
-       | InstanceType | Instance type of EC2. Please refer to  the below note for recommended configuration|
-       | KeyName  | Keypair name for SSH access |
-       | Namespace | An environment name that will be prefixed to resource names |
+       | InstanceType | Instance type of EC2. Please refer to  the below note for recommended configuration. |
+       | KeyName  | Name of keypair that is used for doing SSH to the instance |
+       | Namespace | An environment name that will be prefixed to resource names. This is used to differentiate the resources |
        | S3Mounts | A JSON array of objects with name, bucket, and prefix properties used to mount data |
        | Subnet | The VPC subnet in which the EC2 instance will reside |
        | VPC | The VPC in which the EC2 instance will reside |
