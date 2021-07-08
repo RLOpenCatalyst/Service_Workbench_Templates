@@ -259,33 +259,36 @@ def IsRoleNameExist(roleName):
 
 def getArtifactsBucketName(commonName):
     accountId = boto3.client("sts").get_caller_identity()["Account"]
+    artifactsBucketName = ''
     artifactsBucketName = accountId +'-' + commonName +'-artifacts'
     s3Client = boto3.client('s3')
     response = s3Client.head_bucket(
         Bucket=artifactsBucketName
     )
+    if artifactsBucketName == '':
+        raise Exception('SWB artifacts bucket name is not found. Please check SWB installation or the stage file')
     return artifactsBucketName
 
 def uploadRstudioTemplateToArtifactsBucketAndgetTheURL(bucketName):
     print('Uploading the EC2-Rstudio server template to SWB artifacts bucket')
-    print('Bucket name ', bucketName)
     s3Client = boto3.client('s3')
     objectName = 'ec2-rstudio-server.cfn.yml'
     bucketUrl = ''
     path = os.getcwd()
     mainPath = path.replace('/machine-images/config/infra','')
     templatePath = os.path.join(mainPath, 'cfn-templates/ec2-rlstudio.yaml')
-    print('Template Path ', templatePath)
     with open(templatePath, "rb") as f:
-        response = s3Client.upload_file(templatePath, bucketName, 'service-catalog-products/{}'.format(objectName))
-        print('Response of upload file object ',response)
+        response = s3Client.upload_file(templatePath, bucketName, 'partner-products/{}'.format(objectName))
         preSignedUrlResponse = s3Client.generate_presigned_url('get_object',
                                                     Params={'Bucket': bucketName,
-                                                            'Key': 'service-catalog-products/{}'.format(objectName)},
+                                                            'Key': 'partner-products/{}'.format(objectName)},
                                                     ExpiresIn=3600)
         response = json.dumps(preSignedUrlResponse, default=myconverter)
         bucketUrl = response[1 : response.index('?')]
-        print('Bucket URL', bucketUrl)
+    if bucketUrl == '':
+        raise Exception('Failed in uploading the RStudio template to the bucket. Please make sure all the parameters in stage file are correct.')
+    else:
+        print('Completed uploading the EC2-Rstudio server template to SWB artifacts bucket')
     return bucketUrl
 
 if __name__ == "__main__":

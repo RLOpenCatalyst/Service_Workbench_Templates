@@ -157,10 +157,6 @@ Resources:
           FromPort: 80
           ToPort: 80
           CidrIp: !Ref AccessFromCIDRBlock
-        - IpProtocol: tcp
-          FromPort: 443
-          ToPort: 443
-          CidrIp: 0.0.0.0/0
 
       Tags:
         - Key: Name
@@ -325,6 +321,10 @@ Outputs:
   MetaConnection1InstanceId:
     Description: EC2 Linux Instance Id
     Value: !Ref EC2Instance
+  
+  InstanceSecurityGroupId:
+    Description: EC2 Instance Security Group Id
+    Value: !Ref SecurityGroup
 
   NeedsALB:
     Description: Flag to specify environment requires ALB
