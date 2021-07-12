@@ -132,10 +132,16 @@ def checkIfPortfolioExistInAccount():
 
 def parseTemplate():
     cloudFormationClient = boto3.client('cloudformation')
-    with open("../../../cfn-templates/RstudioToServiceCatalog.yaml", "rb") as templateFileobj:
+    path = os.getcwd()
+    mainPath = path.replace('/machine-images/config/infra','')
+    templatePath = os.path.join(mainPath, 'cfn-templates/RstudioToServiceCatalog.yaml')
+    template_body = ''
+    with open(templatePath, "rb") as templateFileobj:
         template_data = templateFileobj.read()
-    cloudFormationClient.validate_template(TemplateBody=template_data)
-    return template_data
+        #template_body = str(template_data, 'UTF-8')
+        template_body = template_data.decode('UTF-8')
+    cloudFormationClient.validate_template(TemplateBody=template_body)
+    return template_body
 
 def createStack(roleName, stackName, bucketUrl):
     client = boto3.client('cloudformation')
