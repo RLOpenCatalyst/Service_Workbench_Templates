@@ -1,0 +1,30 @@
+version: "3"
+services:
+
+  backend:
+    image: tower-backend
+    restart: always
+    networks:
+      - frontend
+      - backend
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/work
+    working_dir: /work
+
+  frontend:
+    build: ./tower-web
+    restart: always
+    volumes:
+      - ../nextflow-outputs:/usr/share/nginx/html/assets/landing/assets/nextflow
+    networks:
+      - frontend
+    ports:
+      - 8000:80
+    depends_on:
+      - backend
+
+networks:
+  frontend: {}
+  backend: {}

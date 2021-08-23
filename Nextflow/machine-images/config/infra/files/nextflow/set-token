@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Generate auth token
+AUTH_TOKEN=$(uuidgen)
+# Replace the generated token in the sql file
+sudo sed -i "s/<<AUTH_TOKEN>>/${AUTH_TOKEN}/g" /usr/local/bin/update-user.sql
+echo "Update auth token to user table"
+sudo java -cp /usr/local/bin/h2/bin/h2-*.jar org.h2.tools.RunScript -url "jdbc:h2:file:/usr/local/bin/nf-tower/.db/h2/tower" -driver "org.h2.Driver" -user "sa" -password "testpass" -script /usr/local/bin/update-user.sql -showResults
+# Replace <<AUTH_TOKEN>> back for it to work on next boot
+sudo sed -i "s/${AUTH_TOKEN}/<<AUTH_TOKEN>>/g" /usr/local/bin/update-user.sql
+echo "Auth token updated in db"
+
+#Update SSM parameter with the auth token
+instance_id=$(curl -s "http://169.254.169.254/latest/meta-data/instance-id")
+instance_region=$(curl -s "http://169.254.169.254/latest/meta-data/placement/region")
+aws ssm put-parameter --name "/nextflow-tower/auth-token/sc-environments/ec2-instance/${instance_id}" --value $AUTH_TOKEN --region $instance_region --type SecureString --overwrite 
+echo "Stored nextflow tower auth token in SSM"
