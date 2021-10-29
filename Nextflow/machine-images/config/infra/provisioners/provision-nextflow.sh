@@ -108,7 +108,8 @@ echo '@reboot /usr/local/bin/set-token 2>&1 >> /var/log/set-token.log' >> "/tmp/
 sudo crontab "/tmp/crontab"
 
 #Create Nextflow output directory
-sudo mkdir -p nextflow/outputs
+sudo mkdir -p /home/ec2-user/nextflow/outputs
+chown -R nginx:nginx "/home/ec2-user/"
 
 # Wipe out all traces of provisioning files
 sudo rm -rf "/tmp/nextflow"
