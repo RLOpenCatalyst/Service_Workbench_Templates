@@ -83,7 +83,7 @@ sudo openssl dhparam -out "/etc/nginx/dhparam.pem" 2048
 sudo mv "/tmp/nextflow/ssl/cert.pem" "/etc/nginx/"
 sudo mv "/tmp/nextflow/ssl/cert.key" "/etc/nginx/"
 sudo mv "/tmp/nextflow/nginx.conf" "/etc/nginx/"
-sudo chown -R nginx:nginx "/etc/nginx"
+sudo chown -R ec2-user:ec2-user "/etc/nginx"
 sudo chmod -R 600 "/etc/nginx"
 #Install Nginx Fancy index module
 sudo wget https://nginx.org/download/nginx-1.20.0.tar.gz
@@ -109,7 +109,6 @@ sudo crontab "/tmp/crontab"
 
 #Create Nextflow output directory
 sudo mkdir -p /home/ec2-user/nextflow/outputs
-chown -R nginx:nginx "/home/ec2-user/"
 
 # Wipe out all traces of provisioning files
 sudo rm -rf "/tmp/nextflow"
