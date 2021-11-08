@@ -66,6 +66,7 @@ Parameters:
     Type: String
     Description: The namespace value provided when onboarding the Member account
     Default: ''
+
   IsAppStreamEnabled:
     Type: String
     AllowedValues: [true, false]
