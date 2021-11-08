@@ -58,6 +58,20 @@ Parameters:
     Type: String
     Description: The ARN of the AWS Certificate Manager SSL Certificate to associate with the Load Balancer
 
+  EgressStoreIamPolicyDocument:
+    Type: String
+    Description: The IAM policy for launched workstation to access egress store
+
+  SolutionNamespace:
+    Type: String
+    Description: The namespace value provided when onboarding the Member account
+    Default: ''
+  IsAppStreamEnabled:
+    Type: String
+    AllowedValues: [true, false]
+    Description: Is AppStream enabled for this workspace
+    Default: 'false'
+
 Conditions:
   IamPolicyEmpty: !Equals [!Ref IamPolicyDocument, "{}"]
 
