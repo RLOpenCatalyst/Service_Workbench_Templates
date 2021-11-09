@@ -95,7 +95,7 @@ sudo make install
 cd ..
 #Copy Custom HTML and CSS file for fancy index
 sudo mv "/tmp/nextflow/Nginx-Theme.zip" "/usr/local/bin/"
-sudo unzip Nginx-Theme.zip && sudo mv Nginx-Theme .nginxy
+sudo unzip Nginx-Theme.zip && sudo mv Nginx-Theme /home/ec2-user/.nginxy
 sudo systemctl enable nginx
 sudo systemctl restart nginx
 
