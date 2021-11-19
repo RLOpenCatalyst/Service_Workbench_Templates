@@ -86,6 +86,7 @@ Since RStudio currently requires a custom domain name, please configure the same
 * The EC2 instance backing this workspace must be in the Ready state.
 * Click on the connections button and hit Connect.
 * If you're provisioning an RStudio instance with studies selected, the selected studies will show up as mounted directories in the RStudio. These study directories will contain files uploaded to the corresponding study. Any files uploaded to the study from the Service Workbench will automatically appear in the mounted study directories after a short delay.
+* Note: Connection-critical SSM parameters are created once RStudio instances are fully initialized. Allow up to a minute after an RStudio instance becomes available on Service Workbench for connections to work.
 
 **Notes**:
 * If you're provisioning an RStudio instance with studies selected, these studies will only get mounted on your instance once you click on the RStudio workspace's "Terminal" tab.
