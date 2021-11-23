@@ -46,14 +46,22 @@ def formRoleName():
     extension = ''
     stageFileFound = False
     path = os.getcwd()
+    # Make use of the configuration.json file to get proper stage file
+    with open("configuration.json", "r") as file:
+        jsonFile = json.load(file)
+        stageName = jsonFile["stageName"]
+
     for file in os.listdir(path):
-        if file.endswith(".yml") or file.endswith(".yaml"):
+        if file.endswith(".yml") or file.endswith(".yaml") and not stageFileFound:
             fileSplit = os.path.splitext(file)
             fileName = fileSplit[0]
             extension = fileSplit[1]
-            stageFileFound = True
+            # Stop traversal when stagefile is found
+            if stageName == fileName:
+                stageFileFound = True
+                break
     
-    print('looking for the stage file '+ fileName + extension + ' in the current working directory')
+    print('looking for the stage file '+ stageName + extension + ' in the current working directory')
     if not stageFileFound:
         raise Exception('Stage file is not found in the current working directory. Please add the stage file into the specified directory')
     else:
@@ -73,6 +81,8 @@ def formRoleName():
                 raise Exception('AWS region does not exist in your stage file. Please add aws region into your stage file')
             if configuration['awsRegion'] is None:
                 raise Exception('AWS Region value does not exist in your stage file. Please add region name that you have used during SWB installation into your stage file')
+            # Setting boto3 to use provided awsProfile and awsRegion from stage file
+            boto3.setup_default_session(profile_name=configuration['awsProfile'], region_name=configuration['awsRegion'])
             print('Checking for the key awsRegion and its value in the stage file')
             checkIfRegionisValid(configuration['awsRegion'])
             regionShortName = regionShortNamesMap.get(configuration['awsRegion'])
@@ -241,7 +251,7 @@ def describeStack(stackName):
     if(stackStatus == 'CREATE_COMPLETE'):
         print('-------------------------Stack created successfully----------------------------------')
         return
-    if(stackStatus == 'CREATE_FAILED' or 'IMPORT_FAILED' or 'IMPORT_ROLLBACK_IN_PROGRESS' or 'IMPORT_ROLLBACK_FAILED' or 'IMPORT_ROLLBACK_COMPLETE' or 'ROLLBACK_IN_PROGRESS'):
+    if(stackStatus in ['CREATE_FAILED', 'IMPORT_FAILED', 'IMPORT_ROLLBACK_IN_PROGRESS', 'IMPORT_ROLLBACK_FAILED', 'IMPORT_ROLLBACK_COMPLETE', 'ROLLBACK_IN_PROGRESS']):
         print('Stack ' + stackName + ' is with status ' + stackStatus + ', so deleting the stack')
         print('Please check the input parameters and try again')
         print('-------------------------Deleting the stack----------------------------------')
