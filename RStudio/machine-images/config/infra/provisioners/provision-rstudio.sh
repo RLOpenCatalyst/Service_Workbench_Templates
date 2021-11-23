@@ -62,6 +62,7 @@ sudo mv "/tmp/rstudio/set-password" "/usr/local/bin/"
 sudo chown root: "/usr/local/bin/set-password"
 sudo chmod 775 "/usr/local/bin/set-password"
 sudo crontab -l 2>/dev/null > "/tmp/crontab"
+sudo sh "/usr/local/bin/set-password"
 echo '@reboot /usr/local/bin/set-password 2>&1 >> /var/log/set-password.log' >> "/tmp/crontab"
 sudo crontab "/tmp/crontab"
 
