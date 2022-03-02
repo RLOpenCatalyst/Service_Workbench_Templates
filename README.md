@@ -39,4 +39,4 @@ Once signed up, Customers can raise an issue as shown below.
 
 As part of an ongoing collaboration with SWB teams using an open-source model, we expect customers to need help with implementation, support, and ongoing enhancements of the above solutions. Sign up with Relevance Lab to start getting benefits.
 
-[![Signup-06b](https://user-images.githubusercontent.com/63344463/122898786-ccbe1180-d368-11eb-9c04-890231e3032a.png)](https://relevancelab.com/registration-form/)
+[![Signup-06b](https://user-images.githubusercontent.com/63344463/122898786-ccbe1180-d368-11eb-9c04-890231e3032a.png)](https://relevancelab.com/sign-up-form/)
