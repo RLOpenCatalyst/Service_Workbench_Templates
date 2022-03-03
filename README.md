@@ -37,6 +37,6 @@ Once signed up, Customers can raise an issue as shown below.
 
 ![Github com-Customer-New-Registration-01B](https://user-images.githubusercontent.com/64137641/123082007-35c28980-d43c-11eb-8efe-ac63c2b60863.png)
 
-As part of an ongoing collaboration with SWB teams using an open-source model, we expect customers to need help with implementation, support, and ongoing enhancements of the above solutions. Sign up with Relevance Lab to start getting benefits.
+As part of an ongoing collaboration with SWB teams using an open-source model, we expect customers to need help with implementation, support, and ongoing enhancements of the above solutions. Sign up with Relevance Lab to start getting benefits. Contact us at rlcloudsupport@relevancelab.com.
 
 [![Signup-06b](https://user-images.githubusercontent.com/63344463/122898786-ccbe1180-d368-11eb-9c04-890231e3032a.png)](https://relevancelab.com/sign-up-form/)
