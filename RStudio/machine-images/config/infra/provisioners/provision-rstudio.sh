@@ -8,13 +8,13 @@ sudo yum install -y libcurl-devel-7.79.1 libpng-devel-1.5.* cairo-devel-1.15.* p
 sudo yum install -y xorg-x11-server-devel-1.20.* libX11-devel-1.6.* libXt-devel-1.1.*
 
 # Install R from source (https://docs.rstudio.com/resources/install-r-source/)
-R_VERSION="3.6.3"
+R_VERSION="4.1.3"
 mkdir -p "/tmp/R/"
-curl -s "https://cran.rstudio.com/src/base/R-3/R-${R_VERSION}.tar.gz" > "/tmp/R/R-${R_VERSION}.tar.gz"
+curl -s "https://cran.r-project.org/src/base/R-4/R-${R_VERSION}.tar.gz" > "/tmp/R/R-${R_VERSION}.tar.gz"
 cd "/tmp/R/"
 tar xvf "R-${R_VERSION}.tar.gz"
 cd "R-${R_VERSION}/"
-./configure --enable-memory-profiling --enable-R-shlib --with-blas --with-lapack
+./configure --enable-memory-profiling --enable-R-shlib --with-blas --with-lapack --with-pcre1
 sudo make
 sudo make install
 cd "../../.."
