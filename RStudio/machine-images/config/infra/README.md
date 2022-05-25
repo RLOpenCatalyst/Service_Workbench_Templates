@@ -9,24 +9,36 @@ To install Packer 1.6.0, use [pkenv](https://github.com/iamhsa/pkenv)
  *  **Install Git**: [Git Installation Link](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
  *  **Install pip**: [pip Installation Link](https://pip.pypa.io/en/stable/installing/)
  * Clone the repository Service_Workbench_Templates by using the following git command. <br />
-    - git clone https://github.com/RLOpenCatalyst/Service_Workbench_Templates.git
+    ```
+    git clone https://github.com/RLOpenCatalyst/Service_Workbench_Templates.git
+    ```	
 
 **Steps to install EC2-RStudio-Server AMI**
 
  * Change the configuration file for AMI creation.
 Navigate to the the folder RStudio/machine-images/config/infra. <br />
 Fill the following parameters in the file configuration.json by using the parameters specific to Service Workbench deployment region.
-	- AWS Access key
-	- AWS Secret key
-	- Region
-	- VPC ID
-	- Subnet
-	- AMI Name
-	- AWS Profile
+
+|       Configuration        |   Description   |
+|--------|--------------------------------|
+| AWS Access key | AWS programmatic access key that will used to create the AMI. Not needed when AWS Profile is used |
+| AWS Secret key | AWS programmatic secret key that will used to create the AMI. Not needed when AWS Profile is used |
+| Region | Region in which the AMI needs to be created |
+| VPC ID | VPC in which the AMI needs to be created. Leave it blank to use default VPC |
+| Subnet | Subnet in which the AMI needs to be created. Leave it blank to use default VPC |
+| AMI Name | Name of the AMI that needs to be created |
+| AWS Profile | AWS CLI profile that needs to be used to create the AMI. Not needed when AWS Access and Secret key are used |
+| Stage Name |Stage file name used in the SWB deployment |
+
+> **_NOTE:_**  To use a centralized devops account for storing AMIs. Use the Devops profile used in the SWB deployment as the **AWS Profile** configuration.
+
  * **secret.txt**: A single-line text file that contains the JWT secret from the Service Workbench deployment, which can be found in Parameter Store at /$stage/$solution/jwt/secret, where $stage is the stage name for the environment and $solution is the solution name. <br />
-**NOTE**: Add this secret.txt file to the following folder RStudio/machine-images/config/infra/files/rstudio
+> **_NOTE:_** Add this secret.txt file to the following folder. RStudio/machine-images/config/infra/files/rstudio
  * Run the packer script in the folder RStudio/machine-images/config/infra using the following command
-    - packer build -var-file=configuration.json packer-ec2-rstudio-workspace.json
+
+    ```
+    packer build -var-file=configuration.json packer-ec2-rstudio-workspace.json
+    ```
 
 **Steps to install EC2-RStudio-Server**
 
@@ -38,9 +50,11 @@ Fill the following parameters in the file configuration.json by using the parame
     $stage file.
         -   solutionName
         -   awsRegion
-    * **NOTE**: Add one more key called ‘portfolioId ’to the same file. You can login to your Main account and access the Service Catalog in the region where your Service Workbench instance is deployed. Navigate to Portfolios in the left hand menu. Find the Service Workbench created portfolio and note down the portfolio id.
+    > **_NOTE:_** Add one more key called **portfolioId** to the same file. You can login to your Main account and access the Service Catalog in the region where your Service Workbench instance is deployed. Navigate to Portfolios in the left hand menu. Find the Service Workbench created portfolio and note down the portfolio id.
     * After adding the Portfolio ID to the $stage file you can run the
-    following commands 	
-        -  pip install -r requirements.txt  	 
-        -  python create-rstudio.py
+    following commands 
+        ```	
+        pip install -r requirements.txt
+        python create-rstudio.py
+        ```
     * If the script outputs saying ‘Stack created successfully’, the EC2-RStudio-Server product should be visible in the Workspace Types screen when you login to Service Workbench as an Administrator. Otherwise you can refer to the errors that are thrown by the script and correct them accordingly.
