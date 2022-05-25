@@ -29,7 +29,6 @@ Fill the following parameters in the file configuration.json by using the parame
 | AMI Name | Name of the AMI that needs to be created |
 | AWS Profile | AWS CLI profile that needs to be used to create the AMI. Not needed when AWS Access and Secret key are used |
 | Stage Name |Stage file name used in the SWB deployment |
-|
 
 > **_NOTE:_**  To use a centralized devops account for storing AMIs. Use the Devops profile used in the SWB deployment as the **AWS Profile** configuration.
 
@@ -56,8 +55,6 @@ Fill the following parameters in the file configuration.json by using the parame
     following commands 
         ```	
         pip install -r requirements.txt
-        ```	 
-        ```
         python create-rstudio.py
         ```
     * If the script outputs saying ‘Stack created successfully’, the EC2-RStudio-Server product should be visible in the Workspace Types screen when you login to Service Workbench as an Administrator. Otherwise you can refer to the errors that are thrown by the script and correct them accordingly.
