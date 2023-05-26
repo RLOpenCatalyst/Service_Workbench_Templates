@@ -8,7 +8,7 @@ sudo yum install -y libcurl-devel libpng-devel-1.5.* cairo-devel-1.15.* pango-de
 sudo yum install -y xorg-x11-server-devel-1.20.* libX11-devel-1.6.* libXt-devel-1.1.*
 
 # Install R from source (https://docs.rstudio.com/resources/install-r-source/)
-R_VERSION="4.1.3"
+R_VERSION="4.3.0"
 mkdir -p "/tmp/R/"
 curl -s "https://cran.r-project.org/src/base/R-4/R-${R_VERSION}.tar.gz" > "/tmp/R/R-${R_VERSION}.tar.gz"
 cd "/tmp/R/"
