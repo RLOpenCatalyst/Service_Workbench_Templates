@@ -27,7 +27,7 @@ Below are a few key features of EC2-RStudio-Server
     
     | RStudio Server Version | R Version  |
     |------------------------|------------| 
-    |      1.4.1717          |   3.6.3    |
+    |      1.4.1717          |   4.3.0    |
     
             
     | Packages Installed            |  Version |          Description                                |
